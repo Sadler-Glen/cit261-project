@@ -435,6 +435,28 @@
             </code>
             Let's try the above code out and see what we return.
         </p>
+        
+        <h3>Toggle</h3>
+            <button>Start machine</button>
+            <p>The machine is stopped.</p>        
+        
+            <script>
+        var btn = document.querySelector('button');
+        var txt = document.querySelector('p');
+
+        btn.addEventListener('click', updateBtn);
+
+        function updateBtn() {
+            if (btn.textContent === 'Start machine') {
+                btn.textContent = 'Stop machine';
+                txt.textContent = 'The machine has started!';
+            } else {
+                btn.textContent = 'Start machine';
+                txt.textContent = 'The machine is stopped.';
+            }
+        }
+    </script>
+        
         <h3>Example associative Array</h3>
 
         <script type="text/javascript">
