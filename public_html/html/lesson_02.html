@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
+        <title>CIT-261:L02</title>
+
+    </head>
+    <body>
+        <header>        
+            <div role="banner" id="page-header">
+                <p>CIT 261 - Glen Sadler</p>                   
+            </div>
+        </header>
+        <nav role="navigation" id="nav">
+            <p><a href="../index.html" title="CIT-216">Return to List</a></p>
+        </nav>
+        <main role="main">
+            <h2>Topic 02: Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h2>
+            <h3>Objects</h3>
+            <blockquote>The variables in Javascript can be thought of as being named containers.
+                You place data in the container and then refer to the container by naming 
+                the container. Before you use a variable in a program you must <span style="color:blue;font-weight:bold">declare</span> 
+                or <span style="color:green">initialize</span> it. This is done
+                with the <span style="color:blue">var</span> keyword as follows.</blockquote>
+            <h3>Declaring a variable</h3>
+            <blockquote><code>var x;<br>
+                    var name;</code></blockquote>
+            <h3>Initializing a Variable</h3>
+            <blockquote><code>var name = "Glen"<br>
+                    var name;<br>
+                    name = "Glen";</code></blockquote>
+            <h3>Javascript Variable names</h3>
+            <ul>
+                <li>Do not use Javascript reserved keywords, i.e., do not use <span style="color:blue;font-weight:bold">break</span>
+                    or <span style="color:blue;font-weight:bold">boolean</span> as variable names as they are not valid.</li>
+                <li>Javascript variable names cannot start with a number (0-9). They must begin with a letter or and underscore
+                    character. Eg., <span style="color:blue;font-weight:bold">59check</span> is invalid, however 
+                    <span style="color:blue;font-weight:bold">_59check</span> is a valid variable name.</li>
+                <li>Javascript variable names are also case sensitive. For example <span style="color:blue;font-weight:bold">Name</span>
+                    and <span style="color:blue;font-weight:bold">name</span> are two different variables.</li>
+            </ul>
+            <h3>Functions & Parameters</h3>
+            <blockquote>A Javascript function is a block of code designed to complete a particular task
+                and is executed or runs when called or invoked.<br><br>
+                <h4>For example:</h4>
+                <ul>
+                    <li>When an event occurs such as when a user clicks on a button.</li>
+                    <li>When it is called from some Javascript code.</li>
+                    <li>Or it may call itself and therefore run automatically.</li><br>
+                </ul>
+                The function is defined with the <span style="color:blue;font-weight:bold">function</span> keyword, followed
+                by a <span style="color:blue;font-weight:bold">name</span>, followed by parenthesis 
+                <span style="color:blue;font-weight:bold">()</span>.<br><br>
+                Function names follow the same rules as variable names and can contain numbers, letters, and dollar signs.<br><br>
+                Parameters may be included in the parenthesis and the code that is to be run is within the curly braces 
+                <span style="color:blue;font-weight:bold">{}</span>,as per the example below.<br>
+                
+                <blockquote>
+                        <code>function name(parameter1, parameter2, parameter3,...) {<br>
+                        <blockquote>code to be executed<br>
+                            return value;
+                        </blockquote>
+                        }</code>
+                </blockquote> 
+                <h4>Function return</h4>
+                <blockquote>When the <span style="color:blue;font-weight:bold"> return statement</span> is reached
+                    the function will stop running. If the function was called from a statement, Javascript will
+                    return to the calling statement and start running the code after the calling statement. If the
+                    function calculates a <span style="color:blue;font-weight:bold">return value</span>, this value
+                    is returned back to the calling function.</blockquote>
+                The beauty of functions is that once they have been defined or created, they can be reused many times
+                with different parameters or arguments to produce different results.<br><br>
+                The following is example code which calculates all the odd integers from 1 to n (user input). The
+                function is named sumOdd() and has no parameters passed to it.<br>
+                <h4>What the function does</h4>
+                <ol>
+                    <li>The user is prompted for a positive integer.</li>
+                    <li>The function is invoked.</li>
+                    <li>The input is validated.</li>
+                    <li>The for loop starting at 1 will check for odd numbers up to the inputted integer
+                        and sum these numbers with the use of the modulus feature built into Javascript.</li>
+                </ol> 
+                <blockquote>
+                    <code>function sumOdd() {
+                        <blockquote>var n = parseInt(document.getElementById("numberBox").value);<br>
+                    var sum = 0;<br>
+                    //check for 0 or -ve numbers<br>
+                    if (n <= 0) {
+                       
+                        <blockquote>return document.getElementById('outputDiv').innerHTML 
+                            = "You must enter a Positive Integer";
+                        </blockquote>                           
+                    }
+                        <blockquote>for (var i = 1; i <= n; i++) {
+                            <blockquote>if (i % 2 != 0) {
+                                <blockquote>sum += i;
+                                </blockquote>}
+                            </blockquote>}
+                            <blockquote>document.getElementById('outputDiv').innerHTML =
+                            "The sum of all odd integers from 1 to " + n + " is " + sum;
+                            </blockquote></blockquote></blockquote>}
+                    </code>
+                </blockquote></blockquote>
+                
+        <hr>
+        <h2>Loops</h2>
+        <p>There are several kinds of loops utilised in Javascript which essentially end up doing the same thing. They
+            are used to repeat an action a number of times depending on the requirements of the function that it is 
+            implemented in. Our example Loop below repeats the action "n" times i.e., the number that is input by the
+            user. <br><br>
+            Notable other loops that are implemented in Javascript are:</p>
+        <ul>
+            <li>do...while loop</li>
+            <li>while loop</li>
+            <li>for...in loop</li>
+        </ul>
+        <h3>for loop</h3>
+        <p>The for loop executes until a condition evaluates to false and has the following form.</p>
+        <blockquote><code>for (initial expression; condition; increment expression;){
+                <blockquote>statement's </blockquote>}</code></blockquote>
+
+
+        <blockquote><h4>Working Example of For Loop, and Conditional If.</h4>
+            <h4>Sum all Odd Integers</h4>
+            Please enter a Positive Integer:
+            <input type="text" id="numberBox" size="4"><br/><br/>
+            <button type="button" onclick="sumOdd()">Sum Odd Integers</button><br/><br/>  
+            <div id="outputDiv"></div>
+
+            <script type="text/javascript">
+
+                /* Defining table for outputting the sum of all odd integers 
+                 * between 1 and n, inclusive.
+                 * Input: User input a number "n"
+                 * Processing: provide a for loop to determine all the odd 
+                 * integers from 1 to n and sum them. Use the modulus operator
+                 * to determine whether the mumber is odd or even
+                 * Output: Sum of all odd integers from 1 to n, inclusive.
+                 */
+                function sumOdd() {
+                    var n = parseInt(document.getElementById("numberBox").value);
+
+                    var sum = 0;
+                    //check for 0 or -ve numbers
+                    if (n <= 0) {
+                        return document.getElementById('outputDiv').innerHTML =
+                                "You must enter a Positive Integer";
+                    }
+
+                    for (var i = 1; i <= n; i++) {
+
+                        if (i % 2 != 0) {
+                            sum += i;
+                        }
+                    }
+
+                    document.getElementById('outputDiv').innerHTML =
+                            "The sum of all odd integers from 1 to " + n + " is " + sum;
+                }
+            </script></blockquote>
+        <h3>do...while Loop</h3>
+        <p>The do...while loop, like the for loop, repeats until a specified
+            condition is false. The difference between the two is that the 
+            statement executes once in the do...while loop before the condition
+            is checked. This is because the while condition is at the end of the
+            code. See the syntax below.</p>
+
+        <blockquote><code>do
+                <blockquote>statement's</blockquote>
+                while (condition);</code></blockquote>
+        <h3>while loop</h3>  
+        <p>The while loop repeats for as long as the specified condition is true.
+            Unlike the For and do...while loops, the while loop tests the condition
+            prior to the statements are executed. As soon as the condition evaluates 
+            to false, the loop is exited and the statement following the while loop 
+            takes control. See the syntax below.</p>
+        <blockquote><code>while (condition)
+                <blockquote>statement's</blockquote>
+            </code></blockquote>
+
+        <h3>for...in loop</h3>
+        <p>The for...in loop, loops through the properties of an object and for each
+            property executes the statements. See the syntax below.</p>
+
+        <blockquote><code>for (variable in object) {
+                <blockquote>statement's</blockquote>
+                }</code></blockquote>
+        <hr>
+        <h2>Conditional Statements</h2>
+        <p>As in every other programming language, the code in Javascript needs 
+            to make decisions based on varying conditions, for example, something as
+            simple as, depending on the weather, what footwear should I wear?<br><br>
+            There are a number of conditional statements used in Javascript and 
+            they are listed below.</p>
+
+        <ul>
+            <li>if</li>
+            <li>if...else</li>
+            <li>switch</li>
+        </ul>
+
+        <h3>Logical Operators: AND, OR and NOT</h3>
+        <p>Logical operators can help miniise the need to use nested if...else
+            statements.</p>
+        <ul>
+            <li>&&(AND)- all expressions must evaluate to be true for the whole expression to be true.</li>
+            <li>||(OR) - One or more expressions must evaluate to be true for the 
+                whole expression to return true.</li>
+            <li>!(NOT) - This operator is used to negate an expression.</li>
+        </ul>
+        <h3>Switch</h3>
+        <p>The switch statement becomes valuable when you want to take a single
+            expression or value as an input and then look through a number of
+            choices until one matches, then execute the corresponding code.</p>
+        <h3>If..else..Example</h3>
+
+        <blockquote>
+            <p>This example asks the user to input the weather and based on 
+                the weather the user will be advised to wear particular footwear. 
+                The user can choose between hot, rain, snow, or, other.<br>
+                Try it out!</p>
+
+            <h3>Choose your footwear carefully!</h3>
+            Weather (hot, rain, snow, other):<input type="text" id="weather" size="6">
+            <button type="button" onclick="Footwear()">Foot Wear</button><br/><br/>  
+            <div id="footwearDiv"></div>
+            <script type="text/javascript">
+                /* Input: The weather
+                 * Processing: Decide footwear based on weather
+                 * with the choice or hot, rain, snow, any
+                 * other text will yeild shoesr
+                 * Output: The footwear based on weather
+                 */
+                function Footwear() {
+                    var footwear
+                    var weather = document.getElementById("weather").value;
+
+                    if (weather == "hot" || weather == "Hot" || weather == "HOT") {
+                        footwear = "sandals";
+                    } else if (weather == "rain" || weather == "Rain" || weather == "RAIN") {
+                        footwear = "galoshes";
+                    } else if (weather == "snow" || weather == "Snow" || weather == "SNOW") {
+                        footwear = "boots";
+                    } else
+                        footwear = "shoes"
+
+                    document.getElementById('footwearDiv').innerHTML = "Based on the weather today, you really need to wear " + footwear + ".";
+                }
+            </script>  
+        </blockquote><p>
+        <p>The code for this is listed below</p>
+        <blockquote>
+            <code>
+        function Footwear() {
+        <blockquote>var footwear;<br><br>
+            var weather = document.getElementById("weather").value;<br><br>
+
+            if (weather == "hot" || weather == "Hot" || weather == "HOT"){<br>
+            footwear = "sandals";<br><br>
+            } else if (weather == "rain" || weather == "Rain" || weather == "RAIN"){<br>
+            footwear = "galoshes";<br><br>
+            } else if (weather == "snow" || weather == "Snow" || weather == "SNOW"){<br>
+            footwear = "boots";<br><br>
+            } else
+            footwear = "shoes"<br><br>
+
+            document.getElementById('footwearDiv').innerHTML = "Based on the weather today, you really need to wear " + footwear + ".";<br><br>
+            </blockquote>}
+            </code>
+        </blockquote>
+        <hr>
+        <h2>Arrays</h2>
+        <p>The Array is an object that is used to store multiple values in a single object. <br>
+        Each array value can easily be accessed individually. You can create an array by declaring it, initialising it or with the use of the 
+        <span style="color:blue;font-weight:bold"><code>new</code></span> keyword.<br>
+        </p>
+        <h3>Ways to create / declare an Array</h3>
+        <blockquote>
+            <code>
+                var motorcycle = [];<br>
+                var motorcycle = ['Honda','Suzuki','Yamaha','Indian'];<br>
+                motorcycle = new Array('Honda','Suzuki','Yamaha','Indian');<br>
+            </code>
+        </blockquote>
+        <p>Arrays are super flexible and you can do so many things with an array. 
+        The following basic things can be achieved with an array. Lets use the 
+        array that we declared above as an example.</p>
+        <blockquote>
+            <code>
+                var motorcycle = ['Honda','Suzuki','Yamaha','Indian'];
+            </code>
+            <p>Things we can do with the array (Array Methods)</p>
+            <ul>
+                <li>Add to or remove from the end of an array.</li><br>
+                    <ul>
+                        <li><code>motorcycle.<span style="color:blue;font-weight:bold">push</span>('Ducati');</code> - add to the end of the array.</li>
+                        <li><code>motorcycle.<span style="color:blue;font-weight:bold">pop</span>('Indian');</code> - remove from the end of the array.</li><br>
+                    </ul></li>
+                    <li>Add to or Remove from the beginning of the array.</li><br>
+                    <ul>
+                        <li><code>motorcycle.<span style="color:blue;font-weight:bold">shift</span>('Ducati');</code> - add to the beginning of the array.</li>
+                        <li><code>motorcycle.<span style="color:blue;font-weight:bold">unshift</span>('Honda');</code> - remove from the beginning of the array.</li><br>
+                    </ul></li>                
+                <li>Search and find elements in and array.</li>
+                <li>Retrieve the number of elements in the array. <code>motorcycle.length</code></li>
+            </ul>
+        </blockquote>
+        <p>There are a plethora of other things that can be done with arrays.</p>
+        <h3>An example of the use of Arrays</h3>
+        <blockquote><h3>Multiply each element in the Array</h3>
+
+        <form id = "Multiply">
+            Enter multiplication factor: <input type = "text" id = "factor" style = "text-align: center;"><br><br>
+            <button type ="button" style = "width: 100px;" onclick="doMult()">Calculate</button>
+            <input name="Reset" style="width: 100px" type="reset" value="Reset">
+            <br><br>Elements of Original Array:<input type = "text" style = "text-align: center;" id = "origarray" readonly = "readonly"><br><br>
+            Elements of New Array:<input type = "text" style = "text-align: center;" id = "newarray" readonly = "readonly"><br><br>
+        </form>
+
+
+                        <p><span style="color:red;font-weight:bold">Instructions:</span></p>
+
+                        <p>1) Input the multiplication factor (Positive or Negative Integers or decimal fraction.)</p>
+
+                        <p>2) Click on the <span style = "color: red; font-weight: bold;"> "Calculate" </span>button</p>
+
+                        <p>This program creates a random 5 element Array (Orignal Array)
+                            each time the <span style = "color: red; font-weight: bold;">"Calculate"</span> button is 
+                            pushed, and also returns the New Array which is populated with the elements of the Original Array
+                            multipied by the factor input by the user.
+
+        <script type="text/javascript">
+            /* Defining table for function doMult.
+             * Input: user inputs the multiplication factor
+             *
+             * Processing: the random coded list Array with the multiplier is passed to the 
+             * function multiply (list, multiplier).
+             * The new array is returned to the function doMult()
+             * 
+             * Output: The original array and the new array are output to the user. 
+             */
+            function doMult() {
+
+                var factor = parseFloat(document.getElementById('factor').value)
+
+                if (isNaN(factor)) {
+                    document.getElementById('factor').value = '"You must enter a number - Please Press Reset!"';
+                    return;
+                } else {
+                    var list = [];
+
+                    for (var i = 0; i <= 4; ++i) {
+                        list[i] = Math.floor(Math.random() * 100) // create a random 5 element array
+                    }
+
+                    document.getElementById('origarray').value = "list[" + list + "]";
+
+                    var newlist = multiply(list, factor);
+
+                    document.getElementById('newarray').value = "list[" + newlist + "]";
+
+
+                }
+            }
+
+            /* Defining table of function multiply (list, multiplier)
+             * Input: The input of the array list[], and the multiplier are received from the function doMult()
+                     
+             * Processing: The function multiply (list, multiplier) uses a for loop to move from element
+             * to element and replace each element in the array with the product of the element and the
+             * multiplier. The function also rounds only those products to 2 places if it has a decimal portion.
+             * in the case of a multiplier having a decimal portion.
+             * 
+             * Output: the new list array is returned to the function doMult()
+             */
+
+            function multiply(list, multiplier) {
+                var p = multiplier;
+                for (var i = 0; i <= list.length - 1; i++) {
+                    list[i] = (list[i] * p);
+                    if (list[i] > Math.floor(list[i])) {
+                        list[i] = list[i].toFixed(2);
+                    }
+
+                }
+                return list;
+            }
+                </script>
+        </blockquote>        
+        <h3>Associative Arrays</h3>
+        <p>An Associative array in javascript is an object and can be declared or created dynamically. 
+            It is in essence a set of key/value pairs as you see in our pseudocode example below. 
+            This means that the value is stored in "association" with its key - hence the name of the 
+            array. Curly braces are used as opposed to square brackets as you see below.<br>
+            <code>
+                <blockquote>
+                    var arr = {key1 : 'value1', key2: 'value2', key3 : 'value3'}; 
+                </blockquote>
+            </code>
+            The key may be a string, a number or an identifier. Lets look at an example that we can use 
+            to show how to access and use Associative arrays. We need to remember that 
+            <span style="color:blue">objects</span> are sometimes referred to as 
+            <span style="color:blue">associative arrays</span>. Let's say we have a car 
+            <span style="color:blue">object</span> as below.
+            <code>
+                <blockquote>
+                    var car = {make: "Toyota", model: "Corona", year: 2017};
+                </blockquote>
+            </code>
+            We can access the <span style="color:blue">properties</span> of the above car
+            <span style="color:blue">object</span> as below.
+            <code>
+                <blockquote>
+                    car["make"] </code>which returns "Toyota"<code><br>
+                    car["model"] </code>which returns "Corona"<code><br>
+                    car["year"] </code>which returns 2017
+                </blockquote>
+            </code>
+            A simple for loop cannot be used to scan the elements in an Associative Array because
+            the elements are not accessible by an index, so it is much simpler and more ideal to 
+            use the for...in loop. The beauty of the for...in loop is that you do not need to 
+            the position of the last element. Here is a piece of code shows the use of the for..in 
+            loop
+            <code>
+                <blockquote>
+                    var car = {make: "Toyota", model: "Corona", year: 2017};<br>
+                    for(var key in car){
+                    <blockquote>
+                        var value = car[key];
+                        document.write(key + " = " + value + 'br');</blockquote>
+                    {
+                    </blockquote>               
+                </blockquote>
+            </code>
+            Let's try the above code out and see what we return.
+        </p>
+        <h3>Example associative Array</h3>
+
+        <script type="text/javascript">
+            var car = { make: "Toyota", model: "Corona", year: 2017};
+                for(var key in car){
+                    var value = car[key];
+                 document.write(key + " = " + value + '<br/>');   
+                }
+        </script>
+       
+        <footer role="contentinfo">
+            <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
+        </footer>
+    </body>
+</html>
