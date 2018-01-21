@@ -444,31 +444,6 @@
                  document.write(key + " = " + value + '<br/>');   
                 }
         </script>
-        
-        
-                <div>
-            <button>Start machine</button>
-            <p>The machine is stopped.</p>
-        </div>
-
-        <p></p>
-        
-            <script>
-        var btn = document.querySelector('button');
-        var txt = document.querySelector('p');
-
-        btn.addEventListener('click', updateBtn);
-
-        function updateBtn() {
-            if (btn.textContent === 'Start machine') {
-                btn.textContent = 'Stop machine';
-                txt.textContent = 'The machine has started!';
-            } else {
-                btn.textContent = 'Start machine';
-                txt.textContent = 'The machine is stopped.';
-            }
-        }
-    </script>
        
         <footer role="contentinfo">
             <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
