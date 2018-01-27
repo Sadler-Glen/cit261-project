@@ -15,9 +15,9 @@ html,body{
 }
 /* Set general rules for body */
 body{
-    font-family: 'Roboto Slab', serif;
-    font-family: 'Open Sans', sans-serif;
-    /*font-family: Arial, Helvetica, sans-serif;*/
+/*    font-family: 'Roboto Slab', serif;
+    font-family: 'Open Sans', sans-serif;*/
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-size: 1em;
     padding: 0;
@@ -27,7 +27,7 @@ body{
 }
 body{
     background-color: #E0F9F4;
-    background-image: url("images/bg.jpg");
+    /*background-image: url("../content/images/bg.jpg");*/
     background-attachment: fixed;
     background-position: center;
     background-size: cover; 
@@ -41,18 +41,18 @@ main[role] {
 
 [role=banner] {
     background-color: rgba(241, 241, 241,.4);
-    border-bottom: solid 4px #0e223d;
+    border-bottom: solid 10px #0e223d;
 }
-header, main[role], nav {
-    width: 60%;
+header, main[role], nav, footer[role] {
+    width: 71.5%;
     margin-left: auto;
     margin-right: auto;
 }
-/*main[role]{
-   width: 60%;
+main[role]{
+   width: 70%;
    margin-left: auto;
    margin-right: auto;
-}*/
+}
 /* Remove default list marker, margin and padding from these lists */
 ul,ol{
     /*list-style: none;*/
@@ -71,13 +71,13 @@ header, main, nav {
     /*max-width:900px;*/
 }
 
-footer{
+/*footer{
     margin: 1.25rem auto;
-}
+}*/
 
-code{
-    font-size: 135%;
-    font-family: monospace;
+code, pre{
+    font-size: 12pt;
+    font-family: courier new;
     color:goldenrod;
     width: 65%
 }
@@ -89,7 +89,11 @@ h1,h2,h3,h4{
     padding-bottom: 0;
     margin-bottom: 0;
 }
-
+.hide-btn {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(.75);
+}
 /*h2{
     font-size: 6vw;  Roughly 6% of the screen width 
     font-family: 'Roboto Slab', serif;
@@ -142,12 +146,9 @@ footer[role]{
     background-color: #0E223D;
     margin-bottom:40px;
     max-height: 100px;
-    -webkit-box-ordinal-group: 5;
-    -ms-flex-order: 5;
-    order: 5;
 }
 
 footer[role] p {
     text-align: center;
-    color: #FFFF;
+    color: #FFF;
 }
