@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
+        <link rel="shortcut icon" href="#"/>
+        <title>CIT-261:L02</title>
+    </head>
+    <body>
+        <header>        
+            <div role="banner" id="page-header">
+                <p>CIT 261 - Glen Sadler</p>                   
+            </div>
+        </header>
+        <nav role="navigation" id="nav">
+            <p><a href="../index.html" title="CIT-216">Return to List</a></p>
+        </nav>
+        <main role="main">
+            <h2>Topic 02: Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h2>
+            <hr>
+            <h3>Object Create function</h3>
+            <p>In javascript we can create an object using:
+            <ul>
+                <li><code>var user = {}; <span style="color:green">// "object literal" syntax</span></code></li>
+                <li><code>var user = new Object(); <span style="color:green">// "object constructor" syntax</span></code></li>
+            </ul>
+            <h4>Properties & Methods</h4>
+            <p>What we have above are empty objects. Let's put some <span style="color:green">properties</span> into {...}
+                as <span style="color:green">"key: value" pairs:</p>
+            <blockquote>
+                <code>var user = { 
+                    <blockquote>
+                        name: "Glen",<br>
+                        age: 63
+                    </blockquote>
+                    };
+                </code>
+            </blockquote>
+            <p>In our <code><span style="color:green">user</span></code> object we have two properties:</p>
+            <ol>
+                <li>The first property has the name <span style="color:green">"name"</span> 
+                    and the value <span style="color:green">"Glen".</span></li>
+                <li>The second property has the name <span style="color:green">"age"</span>
+                    and the value <span style="color:green">63.</span></li>
+            </ol>
+            <p></p>
+            <p>I just want to get the distinction of <span style="color:green">Method</span>
+                out of the way real quick. Let's say we have the following code</p>
+            <pre>
+    var hello = document.getElementById("greeting");
+    var btn = document.getElementById("btn01");
+    btn.addEventListener("click", function () {
+        var x = "What a wonderful day we are having";
+        var capitals = x.toUpperCase();
+        hello.insertAdjacentHTML('beforeend', capitals);
+        btn01.classList.add("hide-btn");
+    });
+            </pre>
+            <p>
+                The <code><span style="color:green">x</span></code> is
+                the object and the <code>
+                    <span style="color:green">.toUppercase();</span>    
+                </code> is a Method of <code><span style="color:green">x</span></code>.
+            </p>
+            <blockquote>
+            <p>Return values of above code: <button id='btn01'>Go</button></p>
+            <div id = "greeting"></div>
+            <script type="text/javascript" src="../javascript/t02_greeting.js"></script>
+            </blockquote>
+            <p>Let's create something that is a little more meaningful which will
+                have properties and a Method.</p>
+            <pre> 
+    var pizzaWrite2 = document.getElementById("pizza");
+    var btn = document.getElementById("btn02");
+    btn.addEventListener("click", function () {
+        var Pizza = {
+            crust: 'thin',
+            toppings: 3,
+            hasBacon: true,
+            <span style="color:green">// Method / Function</span>
+            amountToppings: function () {
+                return this.toppings;
+            }
+        };
+
+        writePizza(Pizza); <span style="color:green">// Call writePizza function()</span>
+
+        <span style="color:green">// option 2: select each key/value discretely and 
+        // write each value to pizza div</span>
+        pizzaWrite2.insertAdjacentHTML('beforeend', 
+            "Crust: " + Pizza.crust + '&lt;br&gt;');
+        pizzaWrite2.insertAdjacentHTML('beforeend', 
+            "Topping: " + Pizza.toppings + '&lt;br&gt;');
+        pizzaWrite2.insertAdjacentHTML('beforeend', 
+            "Has Bacon: " + Pizza.hasBacon + '&lt;br&gt;');
+        pizzaWrite2.insertAdjacentHTML('beforeend', 
+            "amountToppings(): " + Pizza.amountToppings());
+
+        <span style="color:green">//hide button</span>
+        btn02.classList.add("hide-btn");
+    });
+    <span style="color:green">// option 1: using a for...in to extract the values 
+    // and write to pizza div</span>
+    function writePizza(Pizza) {
+        var htmlString = "";
+        var value = Pizza[key];
+        for (var key in Pizza) {
+            htmlString += '&lt;p&gt;' + Pizza[key];
+        }
+        pizzaWrite2.insertAdjacentHTML('beforeend', htmlString);
+    }               
+            </pre>
+            <blockquote>
+                <p>Return values of above code: <button id='btn02'>Go</button></p>
+                <div id ="pizza"></div>
+                <script type="text/javascript" src="../javascript/t02_pizza_01.js"></script>                
+            </blockquote>
+            <p></p>
+            <h3>Object.create() Function</h3>
+            <h4>Syntax</h4>
+            <blockquote>
+                <code>
+                    <p>Object.create(prototype, descriptors)</p>
+                </code>
+            </blockquote>
+            <p>The <code><span style="color:green">prototype</span></code> is required.<br>
+            <p>The <code><span style="color:green">descriptor</span></code> is an object
+                that can contain one or more properties such as data, and accessor properties.
+                A data property is one that can get and set a value.
+            <p></p>
+            <hr>
+            <h3>Inheritance</h3>
+            <pre>
+    <span style="color:green">// Inheritance</span>
+    var btn = document.getElementById("btn03");
+    <span style="color:green">// Create object1 that has two properties a and b
+    // a is an array [1, 2, ,3 , 4]
+    // b is a number 1234</span>
+    var object1 = {a: [1, 2, 3, 4], b: 1234};
+    <span style="color:green">// create object2 using the object.create() function
+    // with the prototype object1 which means that
+    // object 2 will inherit all the properties of object 1</span>              
+    var object2 = Object.create(object1);
+    <span>// Let's prove that. If I am to access object2.a
+    // it should be the same as object1.a, and in the same way
+    // object2.b should be the same as object1.b</span>
+    btn.addEventListener("click", function () {
+        document.getElementById("inheritanceDiv").innerHTML =
+                "object1.a = " + "[" + object1.a + "]" + '&lt;p&gt;' +
+                "object2.a = " + "[" + object2.a + "]" + '&lt;p&gt;' +
+                "object1.b = " + object1.b + '&lt;p&gt;' +
+                "object2.a = " + object2.b + '&lt;p&gt;';
+        btn03.classList.add("hide-btn");
+    });            
+            </pre>
+            <blockquote>
+            <p>Return values of above code: <button id='btn03'>Go</button></p>
+            
+            <div id="inheritanceDiv"></div>
+            </blockquote>
+            <script type="text/javascript" src="../javascript/t02_inherit.js"></script>
+            <p></p>
+        </blockquote>
+        <hr>
+        <h3>Instantiation</h3>
+        <p>As previously discussed, there are a number of ways to create an 
+            object in Javascript. Below are ways and techniques that are used 
+            to do so.</p>
+        <ul>
+            <li>Functional Instantiation</li>
+            <li>Prototypal Instantiation</li>
+            <li>Pseudo Classical Instantiation</li>
+            <li>Functional Instantiation with Shared Methods</li>
+        </ul>
+        <p>
+            I have chosen to show the workings of the Functional, Prototypal,
+            and Pseudoclassical Instantiation. As you will see, the return
+            of each type is the same, they all end up doing the same thing 
+            with their varying methodologies. At the end of the day it may
+            simply come down to what you or your workplace choose to use.
+        </p>
+        <h3>Functional Instantiation</h3>
+        <p></p>
+        <pre>
+    <span style="color:green">// Functional Instantiation
+    // implement a constructor function</span>
+    var pizzaWrite3 = document.getElementById("pizza_03");
+    var btn = document.getElementById("btn04");
+    btn.addEventListener("click", function () {
+        var Pizza = function (crust, toppings, hasBacon){
+            <span style="color:green">//create an empty object</span>
+            var object = {};
+            <span style="color:green">// assign properties</span>
+            object.crust = crust;
+            object.toppings = toppings;
+            object.hasBacon = hasBacon;
+            <span style="color:green">// Method / Function</span>
+            object.amountToppings = function () {
+                return this.toppings;
+            };
+            return object;
+        };
+
+        <span style="color:green">// instantiate a new object</span>
+        var hawaiian = Pizza("crust", 3, true);
+
+        <span style="color:green">// output to webpage the newly instantiated pizza</span>
+        document.getElementById("pizza_03").innerHTML = "Crust: " + hawaiian.crust +", "
+        + "Toppings: " + hawaiian.amountToppings() + ", " + "Bacon: " + hawaiian.hasBacon ;
+        btn04.classList.add("hide-btn");
+    });        
+        </pre>
+        <blockquote>
+        <p>Return values of above code: <button id='btn04'>Go</button></p>
+        <div id ="pizza_04"></div>
+        </blockquote>
+        <script type="text/javascript" src="../javascript/t02_inst_funct.js"></script>
+        <h3>Prototypal Instantiation</h3>
+        <p></p>
+        <pre>
+    <span style="color:green">// Prototypal Instantiation
+    // implement a constructor function</span>
+    var btn = document.getElementById("btn05");
+    btn.addEventListener("click", function () {
+        var Pizza = function (crust, toppings, hasBacon){
+            <span style="color:green">//create an object using Object.create() function</span>
+            var object = Object.create(Pizza.prototype);
+            <span style="color:green">// assign properties to the object</span>
+            object.crust = crust;
+            object.toppings = toppings;
+            object.hasBacon = hasBacon;
+
+            return object;
+        };
+        <span style="color:green">//methods for fallback are automatically created by the interpreter.
+        // Pizza.prototype = {};</span>
+        Pizza.prototype.amountToppings = function(){
+            return this.toppings;
+        };
+
+        <span style="color:green">// instantiate a new object</span>
+        var hawaiian = Pizza("crust", 3, true);
+
+        <span style="color:green">// output to webpage the newly instantiated pizza</span>
+       document.getElementById("pizza_05").innerHTML = "Crust: " + hawaiian.crust +", "
+       + "Toppings: " + hawaiian.amountToppings() + ", " + "Bacon: " + hawaiian.hasBacon ;
+        btn05.classList.add("hide-btn");
+    });
+        </pre>
+        <blockquote>
+        <p>Return values of above code: <button id='btn05'>Go</button></p>
+        <div id="pizza_05"></div>
+        </blockquote>
+        <script type="text/javascript" src="../javascript/t02_inst_proto.js"></script>
+        <p></p>
+        <h3>Pseudoclassical Instantiation</h3>
+        <p></p>
+        <pre>
+    <span style="color:green">// Pseudo classical Instantiation
+    // implement a constructor function</span>
+    var btn = document.getElementById("btn06");
+    btn.addEventListener("click", function () {
+
+        var Pizza = function (crust, toppings, hasBacon){
+        <span style="color:green">// var this = Object.create(Pizza.prototype) is automatically
+        // created by the interpreter</span>
+
+            <span style="color:green">// assign properties using the this. notation</span>
+            this.crust = crust;
+            this.toppings = toppings;
+            this.hasBacon = hasBacon;
+            <span style="color:green">// the "return this" is automatically created by the interpreter</span>
+        };
+        <span style="color:green">//methods for fallback are automatically created by the interpreter.
+        // Pizza.prototype = {};</span>
+        Pizza.prototype.amountToppings = function(){
+            return this.toppings;
+        };
+
+        <span style="color:green">// instantiate an new object with the new keyword</span>
+        var hawaiian = new Pizza("crust", 3, true);
+
+        <span style="color:green">// output to webpage the newly instantiated pizza</span>
+       document.getElementById("pizza_06").innerHTML = "Crust: " + hawaiian.crust + ", "
+       + "Toppings: " + hawaiian.amountToppings() + ", " + "Bacon: " + hawaiian.hasBacon ;
+        btn06.classList.add("hide-btn");
+    });        
+        </pre>
+        <blockquote>
+        <p>Return values of above code: <button id='btn06'>Go</button></p>
+        <div id="pizza_06"></div>
+        </blockquote>
+        <script type="text/javascript" src="../javascript/t02_inst_pseudo.js"></script>
+        <p></p>
+                <h3>Functional-shared Instantiation</h3>
+        <p></p>
+        <pre>
+    <span style="color:green">// Functional-shared Instantiation
+    // implement a constructor function</span>
+    var btn = document.getElementById("btn07");
+    btn.addEventListener("click", function () {
+        var Pizza = function (crust, toppings, hasBacon){
+            <span style="color:green">//create an empty object</span>
+            var object = {};
+            <span style="color:green">// assign properties</span>
+            object.crust = crust;
+            object.toppings = toppings;
+            object.hasBacon = hasBacon;
+            <span style="color:green">// Method / Function</span>
+            object.amountToppings = pizzaMethod.amountToppings;
+            return object;
+        };
+            var pizzaMethod = {};
+            pizzaMethod.amountToppings = function () {
+                return this.toppings;
+            };
+        <span style="color:green">// instantiate a new object</span>
+        var hawaiian = Pizza("crust", 3, true);
+
+        <span style="color:green">// output to webpage the newly instantiated pizza</span>
+       document.getElementById("pizza_07").innerHTML = "Crust: " + hawaiian.crust +", "
+       + "Toppings: " + hawaiian.amountToppings() + ", " + "Bacon: " + hawaiian.hasBacon ;
+        btn07.classList.add("hide-btn");
+    });        
+        </pre>
+                <blockquote>
+        <p>Return values of above code: <button id='btn07'>Go</button></p>
+        <div id="pizza_07"></div>
+        </blockquote>
+        <script type="text/javascript" src="../javascript/t02_inst_functshared.js"></script>
+        <p></p>
+    </main>
+    <footer role="contentinfo">
+        <br>
+        <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,154 @@
+/* Import fonts */
+@import 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab';
+/* for ease these can be copied and pasted into the stylesheet*/
+/*font-family: 'Roboto Slab', serif;
+font-family: 'Open Sans', sans-serif;*/
+/* Change the box model to border box on all elements */
+
+/**{
+    box-sizing: border-box;
+}*/
+/* Set the height and width to html and body to 100% */
+html,body{
+    height: 100%;
+    width: 100%;
+}
+/* Set general rules for body */
+body{
+/*    font-family: 'Roboto Slab', serif;
+    font-family: 'Open Sans', sans-serif;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    color: #0E223D;
+    font-weight: 700;
+}
+body{
+    background-color: #E0F9F4;
+    /*background-image: url("../content/images/bg.jpg");*/
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; 
+}
+
+
+/* set backgrounds of header, main transparent*/
+main[role] {
+    background-color: rgba(255,255,255,.8);      
+}
+
+[role=banner] {
+    background-color: rgba(241, 241, 241,.4);
+    border-bottom: solid 10px #0e223d;
+}
+header, main[role], nav, footer[role] {
+    width: 71.5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+main[role]{
+   width: 70%;
+   margin-left: auto;
+   margin-right: auto;
+}
+/* Remove default list marker, margin and padding from these lists */
+ul,ol{
+    /*list-style: none;*/
+    margin: 10;
+    padding: 10;
+}
+
+/* remove text decoration for all anchors */
+a {
+    text-decoration: none;
+}
+
+header, main, nav {
+    margin: 1.25rem auto;
+    padding: .5rem;
+    /*max-width:900px;*/
+}
+
+/*footer{
+    margin: 1.25rem auto;
+}*/
+
+code, pre{
+    font-size: 12pt;
+    font-family: courier new;
+    color:goldenrod;
+    width: 65%
+}
+
+/* From this point we control element sizes and layout for screen display */
+h1,h2,h3,h4{
+    /*font-size: 8vw;  Roughly 8% of the screen width*/ 
+    font-family: 'Roboto Slab', serif;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.hide-btn {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(.75);
+}
+/*h2{
+    font-size: 6vw;  Roughly 6% of the screen width 
+    font-family: 'Roboto Slab', serif;
+    border: solid 1px #666; 
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+h3{
+    font-size: 4.5vw;  Roughly 6% of the screen width 
+    font-family: 'Roboto Slab', serif;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: solid 1px #666;  used for diagnosis 
+}
+h1, h2, h3, h4 {
+    color: #073674;
+}
+h4{
+    font-size: 16px;
+    font-family: 'Roboto Slab', serif;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+h5,h6{
+    font-size: 1em;  Same size as text 
+}
+p{
+    line-height: 1.5;
+    font-weight: 700;
+     border: solid 1px #666;
+//used for diagnostic purposes
+}*/
+
+
+
+footer[role] {
+    min-height: 80px;
+}
+
+/* style footer anchors */
+
+footer[role] span {
+    color: #FFF;
+    font-weight: bold;    
+}
+
+footer[role]{
+    font-size: .85em; /* 12.8px */
+    background-color: #0E223D;
+    margin-bottom:40px;
+    max-height: 100px;
+}
+
+footer[role] p {
+    text-align: center;
+    color: #FFF;
+}
