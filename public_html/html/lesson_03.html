@@ -1,16 +1,100 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
+        <link rel="shortcut icon" href="#"/>
+        <title>CIT-261:L03</title>
     </head>
     <body>
-        <div>TODO write content</div>
+        <header>        
+            <div role="banner" id="page-header">
+                <p>CIT 261 - Glen Sadler</p>                   
+            </div>
+        </header>
+        <nav role="navigation" id="nav">
+            <p><a href="../index.html" title="CIT-216">Return to List</a></p>
+        </nav>
+        <main role="main">
+            <h2>Topic 03: JSON Parse, Stringify</h2>
+            <hr>
+            <h3>Definition</h3>
+            <p>JSON is an acronym for Javascript Object Notation.
+                It is a standard that uses text to represent Javascript
+                objects. It is used in server-client data transmission
+                in web applications eg., sending data from server to client
+                so it can be displayed in a browser, or vice versa.
+            </p>
+            <p>
+                There are a lot of really cool sites out there where you can generate
+                JSON objects, for testing purposes, which should not to be confused 
+                with Javascript objects. One of those sites is <a href="http://filltext.com">filltext.com</a>
+                where you can create JSON objects. There is also another site called 
+                <a href="https://jsonlint.com/">JSONlint</a> where you can validate 
+                your JSON objects.
+            </p>
+            <h4>JSON Structure</h4>
+            <p>
+                A <span style="color:green">JSON</span> object is a string which has similar appearance to Javascript
+                object literal. You are able to include the same basic data types, 
+                like strings, numbers, booleans, etc. See below an example of a
+                <span style="color:green">JSON</span> object which I created at www.filltext.com in a matter of seconds, 
+                once you get to know how to do it. For those interested to create this I typed
+                the following to produce the <span style="color:green">JSON</span> object. 
+                <span style="color:red">Really Cool!</span>
+            </p>
+            <blockquote>            
+                <code>
+                    <span style="color:green">
+                        http://www.filltext.com/?rows=3&pretty=true&ID={index}&fname={firstName}&lname={lastName}
+                        &business={business}&address={addressObject}
+                    </span>
+                </code>
+            </blockquote>
+            <script src="https://gist.github.com/Sadler-Glen/97be11810145f055f0dacf0cb1a0205f.js"></script>
+            <h4>
+                JSON.parse() method
+            </h4>
+            <p>
+                The data sent from a web server is always a string. To convert 
+                this string to a Javascript object you will use the <code>
+                JSON.parse()</code> method. Heres a short bit of code as
+                an example. if we receive this text from the web server:    
+            </p>
+            <pre>
+    '{num:123, str:"Learning Javascript", bool:true, 
+    o:{x:1, y:2},iamnull:null, array[1,2,3]}'
+            </pre>
+            <p>
+                We could parse this text string and change it to a Javascript 
+                object using the following command.
+            </p>
+        <script src="https://gist.github.com/Sadler-Glen/82c9180c86af49f5ba625ca4fa05f1c3.js"></script>
+        <blockquote>
+        <p>Return values of above code: <button id='btn01'>Parse</button></p>
+        <div id="parse_01"></div>
+        </blockquote>
+        <script type="text/javascript" src="../javascript/t03_parse_01.js"></script>
+        <p></p>
+        <h4>
+            JSON.stringify() method
+        </h4>
+        <p>
+            JSON.stringify() converts a Javascript object to a string or
+            JSON object that can be sent to a webserver. Lets "stringify" 
+            the same Javascript that we created above for example.
+        </p>
+        <script src="https://gist.github.com/Sadler-Glen/af78e245a1ca62381bf161aca379f06a.js"></script>
+        <blockquote>
+        <p>Return values of above code: <button id='btn02'>Stringify</button></p>
+        <div id="stringify_01"></div>
+        </blockquote>
+        <script type="text/javascript" src="../javascript/t03_stringify_01.js"></script>
+        <p></p>
+        </main>
+        <footer role="contentinfo">
+            <br>
+            <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
+        </footer>
     </body>
 </html>
