@@ -34,6 +34,7 @@ var loop;
 var degrees = 0;
 
 function rotateCW(img, speed){
+    var btn01 = document.getElementById("btn01");
     var image = document.getElementById(img);
     image.style.transform = "rotate("+degrees+"deg)";
     loop = setTimeout('rotateCW(\''+img+'\','+speed+')',speed);
@@ -41,10 +42,12 @@ function rotateCW(img, speed){
     if(degrees > 359){
         degrees = 1;
     }
+    btn01.classList.add("hide-btn");
     document.getElementById("status").innerHTML = "Rotation : "+degrees+"deg";
 }
 
 function rotateCCW(img, speed){
+    var btn03 = document.getElementById("btn03");
     var image = document.getElementById(img);
     image.style.transform = "rotate("+degrees+"deg)";
     loop = setTimeout('rotateCCW(\''+img+'\','+speed+')',speed);
@@ -52,11 +55,16 @@ function rotateCCW(img, speed){
     if(degrees < -359){
         degrees = -1;
     }
+    btn03.classList.add("hide-btn");
     document.getElementById("status").innerHTML = "Rotation : "+degrees+"deg";
 }
 
 function rotateStop(){
+    var btn01 = document.getElementById("btn01");
+    var btn03 = document.getElementById("btn03");
     clearTimeout(loop);
+    btn01.classList.remove("hide-btn");
+    btn03.classList.remove("hide-btn");
 }
 
 // Animation using canvas
@@ -71,13 +79,13 @@ function doAnimation(){
     var y = 250;
     // white circle will travel to center of
     // canvas (250px) on the x-axis at a rate 
-    // of 20px per second and then down
-    // on the y-axis at a rate of 3 pixels per second
+    // of 5px per second and then down
+    // on the y-axis at a rate of 5px per second
     setInterval(function(){        
         x += 5;
         if(x > 250){
             y += 5;
-//            x = 250;
+            x = 250;
         }
         // Gives a trail effect at the end of 
         // our moving object.

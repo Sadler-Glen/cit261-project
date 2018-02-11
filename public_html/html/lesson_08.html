@@ -44,15 +44,15 @@
             <p></p>
             <img id="img" src="../content/images/wheel.png" alt="wheel">
             <p></p>
-            <button onclick="rotateCW('img', 30);">Rotate CW</button>
-            <button onclick="rotateStop('img');">Stop!</button>
-            <button onclick="rotateCCW('img', 30);">Rotate CCW</button>
+            <button id="btn01" onclick="rotateCW('img', 30);">Rotate CW</button>
+            <button id="btn02" onclick="rotateStop('img');">Stop!</button>
+            <button id="btn03" onclick="rotateCCW('img', 30);">Rotate CCW</button>
             <h4 id="status" style = "width:150px;"></h4>
             <p>
                 <script src="https://gist.github.com/Sadler-Glen/efa5ec6870d3e6ae898179d6504c0162.js"></script>    
             </p>
             <h2>Animation using Canvas</h2>
-            <canvas id="myCanvas" width="500" height="500" style="border:2px solid #d3d3d3;"></canvas>
+            <canvas id="myCanvas" width="500" height="500" style="border:2px solid #d3d3d3; background-color: black"></canvas>
             <p></p>
             <button onclick="doAnimation();">Start Animation</button>
             <p>
