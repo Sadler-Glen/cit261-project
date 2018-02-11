@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="../javascript/t06_dom_manipulate.js"></script>
+        <link rel="shortcut icon" href="#"/>
+        <title>CIT-261:T07</title>
+    </head>
+    <body>
+        <header>        
+            <div role="banner" id="page-header">
+                <p>CIT 261 - Glen Sadler</p>                   
+            </div>
+        </header>
+        <nav role="navigation" id="nav">
+            <p><a href="../index.html" title="CIT-216">Return to List</a></p>
+        </nav>
+        <main role="main" id="main">
+            <h2>Topic 06: DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</h2>
+            <hr>
+            <h3>
+                What is the DOM?
+            </h3>
+            <p>
+                The Document Object Model (DOM) is the interface for HTML documents and is 
+                the page that programs are able to change the document structure, style and 
+                content. The DOM shows the document as nodes and objects and in this way 
+                the programming language such as Javascript can connect to the page.
+                
+                The web page is such a document which can be either displayed as HTML source 
+                code or within the browser window. Both of these are the same document. The 
+                DOM is an object-oriented representation of a web page, that can be modified 
+                with Javascript.                
+            </p>
+            <script src="https://gist.github.com/Sadler-Glen/9407c35f7d25d1d93b3fcf6c9ea379ca.js"></script>
+            <p>Return values of above code: <button id="btn01" type="button" onclick="manipulate_01()">DOM manipulate_01</button>
+            <div id="div1"></div>
+            <h3 id="dom-manipulate">DOM Changes!</h3>
+            <p></p>
+            <script src="https://gist.github.com/Sadler-Glen/9a88520b7d6c5de28dee7dcfb4a0ca4e.js"></script>
+            <p>Return values of above code to DOM Manipulation Example Below: <button id="btn02" type="button" onclick="manipulate_02()">Append Li</button>
+            <p></p>
+            <script src="https://gist.github.com/Sadler-Glen/63d5c696203b2a93454802bda0755af7.js"></script>
+            <p>Return values of above code to DOM Manipulation Example Below: <button id="btn03" type="button" onclick="manipulate_03()">Remove Li</button>
+            <script src="https://gist.github.com/Sadler-Glen/56957d2bef1c7dd28e5d5195243ce7e8.js"></script>
+            <p>Return values of above code to DOM Manipulation Example Below: <button id="btn04" type="button" onclick="manipulate_04()">Insert Before Li</button>
+            <hr>
+            <h3>
+                DOM Manipulation Example
+            </h3>
+            <ol id = ourList>
+                <li>This is Line 1</li>
+                <li>This is Line 2</li>
+                <li>This is Line 3</li>
+                <li>This is Line 4</li>
+            </ol>            
+        </main>
+        <footer role="contentinfo">
+            <br/>
+            <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
+        </footer>
+    </body>
+</html>

@@ -94,6 +94,57 @@ h1,h2,h3,h4{
   opacity: 0;
   transform: scale(.75);
 }
+
+.hide {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(.75);
+}
+
+.unhide{
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);       
+}
+
+.redText{
+    color: red;
+}
+
+.shrink{
+    font-size:6pt;
+}
+
+ .myBox, .myBox01{
+    background: #9dceff;
+    width: 400px;
+    height: 200px;
+    overflow: hidden;  
+}
+
+.capGuy{
+    background: url(../content/images/capguy-walk.png);
+    width: 120px;
+    height: 211px;
+}
+@keyframes walk-east {
+        from { background-position: 0px; }
+        to { background-position: -960px; }
+}
+
+.circle{
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    background: greenyellow;
+}
+@keyframes animate_01 {
+    0% {transform: translateX(0px);}
+    25%{transform: translateX(200px);}
+    50%{transform: translateX(200px) translateY(200px);}
+    75%{transform: translateX(0px) translateY(200px);}
+    100%{transform: translateX(0px) translateY(0px);}
+}
 /*h2{
     font-size: 6vw;  Roughly 6% of the screen width 
     font-family: 'Roboto Slab', serif;

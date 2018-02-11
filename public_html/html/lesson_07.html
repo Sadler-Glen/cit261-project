@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="../javascript/t07_class_manipulate_01.js"></script>
+        <link rel="shortcut icon" href="#"/>
+        <title>CIT-261:T07</title>
+    </head>
+    <body>
+        <header>        
+            <div role="banner" id="page-header">
+                <p>CIT 261 - Glen Sadler</p>                   
+            </div>
+        </header>
+        <nav role="navigation" id="nav">
+            <p><a href="../index.html" title="CIT-216">Return to List</a></p>
+        </nav>
+        <main role="main" id="main">
+            <h2>Topic 07:  Manipulating CSS Class Properties Using JavaScript.</h2>
+            <hr>
+            <h3>
+                Overview
+            </h3>
+            <p>
+                When it comes to Javascript we do not want to manipulate the 
+                CSS directly. It is best to have CSS set up that can do the manipulation. 
+                This is helpful when collaborating as a team. One of the team could 
+                be working on the CSS and another on the Javascript and they do not
+                have to worry about each other.
+                
+                Ideally our Javascript should only be selecting classes and mostly 
+                only be manipulating classes.
+            </p>
+            <p>
+                The two ways to manipulate classes in plain Javascript are with 
+                <code><span style="color:green">className</span></code> and 
+                <code><span style="color:green">classList</span></code>. Using <code><span style="color:green">
+                className</span></code> is a more direct approach and will work 
+                in every browser, whereas using <code><span style="color:green">classList</span></code>
+                is much simpler but may not be supported in every browser. We will
+                focus our efforts here on <code><span style="color:green">classList</span></code>
+            </p>
+            <p>
+                The following are the methods of the <code><span style="color:green">classList</span></code> 
+                API.
+            </p>
+            <ul>
+                <code><span style="color:green">
+                <li>add(String [,String])</li>
+                <li>remove(String [,String])</li>
+                <li>item(Number)
+                <li>toggle(String [,force])</li>
+                <li>contains(String)</li>
+                <li>replace(oldClass, newClass)</li>
+                </span></code>
+            </ul>
+            <p></p>
+            <h2>Examples of Class Manipulation with Javascript</h2>
+            <p></p>
+            <button id="btn01" type="button" onclick="hide()">&nbsp;Hide &nbsp;&nbsp;Text&nbsp;</button>&nbsp;<button id="btn02" type="button" onclick="unhide()">Unhide &nbsp;Text</button>           
+            <p></p>
+            <button id="btn03" type="button" onclick="redText()">&nbsp;Red &nbsp;&nbsp;&nbsp;Text&nbsp;</button>&nbsp;<button id="btn03" type="button" onclick="blackText()">&nbsp;Black&nbsp;&nbsp;&nbsp;Text&nbsp;</button>
+            <p></p>
+            <button id="btn04" type="button" onclick="shrink()">Toggle&nbsp;Shrink</button>
+            <div id='manipulate' class ='unhide'>
+                <h1>Class Manipulation</h1>
+            </div>
+            <h3>
+                Code for Class Manipulation above: 
+            </h3>
+            <script src="https://gist.github.com/Sadler-Glen/02dd5f701c8cfa7a6ff35c6ede4577ad.js"></script>
+        </main>
+        <footer role="contentinfo">
+            <br/>
+            <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
+        </footer>
+    </body>
+</html>

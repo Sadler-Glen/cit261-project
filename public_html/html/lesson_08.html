@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="../javascript/t08_transitions.js"></script>
+        <link rel="shortcut icon" href="#"/>
+        <title>CIT-261:T08</title>
+    </head>
+    <body>
+        <header>        
+            <div role="banner" id="page-header">
+                <p>CIT 261 - Glen Sadler</p>                   
+            </div>
+        </header>
+        <nav role="navigation" id="nav">
+            <p><a href="../index.html" title="CIT-216">Return to List</a></p>
+        </nav>
+        <main role="main" id="main">
+            <h2>Topic 08: Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript.</h2>
+            <hr>
+            <h2>Transition</h2>
+            <p></p>
+            <button onclick="slideClosed('myBox');">Slide Close</button>
+            <button onclick="slideOpen('myBox');">Slide Open</button>
+            <button onclick="fadeOut('myBox');">Fade Out</button>
+            <button onclick="fadeIn('myBox');">Fade In</button>
+            <p></p>
+
+            <div id = 'myBox' class = 'myBox'>
+                <p>Examples of transition - see codes below</p>
+            </div>
+            <P></P>
+            <button onclick="changeColor('myBox', '#FB0707');">Red</button>
+            <button onclick="changeColor('myBox', '#F8FB03');">Yellow</button>
+            <button onclick="changeColor('myBox', '#0C0');">Green</button>
+            <button onclick="changeColor('myBox', '#9DCEFF');">Original</button> 
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/87a26fd2849ec2ea71acfa2dc282747a.js"></script>   
+            </p>
+            <hr>
+            <h2>Transformation</h2>
+            <h4>Example of Transformation (Rotate)</h4>
+            <p></p>
+            <img id="img" src="../content/images/wheel.png" alt="wheel">
+            <p></p>
+            <button onclick="rotateCW('img', 30);">Rotate CW</button>
+            <button onclick="rotateStop('img');">Stop!</button>
+            <button onclick="rotateCCW('img', 30);">Rotate CCW</button>
+            <h4 id="status" style = "width:150px;"></h4>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/efa5ec6870d3e6ae898179d6504c0162.js"></script>    
+            </p>
+            <h2>Animation using Canvas</h2>
+            <canvas id="myCanvas" width="500" height="500" style="border:2px solid #d3d3d3;"></canvas>
+            <p></p>
+            <button onclick="doAnimation();">Start Animation</button>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/16320e73d26e6ed8ae7d333ae0196a88.js"></script>   
+            </p>
+            <h2>Animations using @keyframes</h2>
+            <p>
+                There are so many ways that one can create animations in both CSS and 
+                 Javascript. With the following animations I have used <code><span style="color:green">
+                @keyframes</span></code> and <code><span style="color:green">animate </span></code>in 
+                CSS to achieve the animation and triggered from Javascript.
+            </p>
+            <h4>Example 1</h4>
+            <p></p>
+            <div id="circle" class="circle"></div>
+            <p class="dummy" style="height: 200px;"></p>
+            <button onclick="startMove()">Start Move</button>
+            <button onclick="stopMove()">Stop Move</button>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/12068db372a88b04310af02b826311f8.js"></script>
+            </p>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/8a395fbb5fe0190a1e1ca1bea1529ac8.js"></script>
+            </p>
+            <h4>Example 2</h4>
+            <p>
+                I was able to grab a sprite sheet with 8 graphics on the sheet. 
+                the original sheet was 600px x 128px. I was able to enlarge it in
+                Photoshop to 960px x 211px. Each graphic was then 120px x 211px. 
+                This size of each sprite was required to ensure that the stylesheet 
+                was coded correctly. See the style sheet code below.
+            </p>
+            <div id="capGuy" class="capGuy"></div>
+            <p></p>
+            <button id="startWalk" onclick="startWalk();">Start</button>            
+            <button id="stopwalk" onclick="stopWalk();">Stop</button> 
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/99e4b2a23944d8c65d5467ac42a21f31.js"></script>    
+            </p>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/de59d01a384adcb45c82586b0099171c.js"></script>
+            </p>
+        </main>
+        <footer role="contentinfo">
+            <br/>
+            <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
+        </footer>
+    </body>
+</html>
