@@ -225,7 +225,7 @@ nav a{
     text-align: center;
     color: #fff;
     display: block;
-    padding: 10px;
+    padding: 5px 30px 5px 30px;
 }
 
 nav a:hover {
@@ -240,7 +240,7 @@ nav a:hover {
     }
 
     nav li{
-        flex: 1 0 0;
+        /*flex: 1 0 0;*/
     }
 }
 
