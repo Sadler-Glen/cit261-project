@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="../javascript/t10_html5_tags.js"></script>
+        <link rel="shortcut icon" href="#"/>
+        <title>CIT-261:T10</title>
+    </head>
+    <body>
+        <header>        
+            <div role="banner" id="page-header">
+                <p>CIT 261 - Glen Sadler</p>                   
+            </div>
+        </header>
+        <div class="wrapper">
+            <nav role="navigation" id="nav" class="menu">
+                <ul>
+                    <li><a href="../index.html">  Home  </a></li>
+                    <li><a href="lesson_08.html">Previous</a></li>
+                    <li><a href="#">  Next  </a></li>
+                    <li><a href="#audio_ex">Audio</a></li>
+                    <li><a href="#video_ex">Video</a></li>
+                    <li><a href="#animation">Canvas</a></li>
+                </ul>
+            </nav>
+        </div>  
+        <main role="main" id="main">
+            <h2>Topic 10: HTML5 Tags - Video, Audio, and Canvas.</h2>
+            <hr>
+            <h3 id="audio_ex">Audio Example</h3>
+            <p></p>
+            <div id="audio">
+                <audio controls>
+                    <source src="../content/audio/consider_the_lilies.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <h3 id="video_ex">Video Example</h3>
+            <p></p>
+            <div>
+                <video id="video" class="original" controls>
+                    <source src="../content/video/consider_the_lilies.mp4" type="video/mp4">
+                </video>
+            </div>
+            <button id="btn01" type="button" onclick="smaller()">Smaller</button>&nbsp;
+            <button id="btn02" type="button" onclick="larger()">Larger</button>&nbsp;
+            <button id="btn02" type="button" onclick="original()">Original</button> 
+            <p></p>
+            <script src="https://gist.github.com/Sadler-Glen/1ca08651c8d67e71acd78d631bcc825c.js"></script>
+            <h3 id="animation">Animation using Canvas</h3>
+            <canvas id="myCanvas" width="500" height="500" style="border:2px solid #d3d3d3; background-color: black"></canvas>
+            <p></p>
+            <button onclick="doAnimation();">Start Animation</button>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/16320e73d26e6ed8ae7d333ae0196a88.js"></script>   
+            </p>
+        </main>
+        <footer role="contentinfo">
+            <br/>
+            <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
+        </footer>
+    </body>
+</html>

@@ -116,6 +116,22 @@ h1,h2,h3,h4{
     font-size:6pt;
 }
 
+
+/*The next three styles are used to size
+the video in topic 10*/
+
+.original{
+    width: 500px;
+}
+
+.smaller{
+    width: 300px;
+}
+
+.larger{
+    width: 700px;
+}
+
 .myBox, .myBox01{
     background: #9dceff;
     width: 500px;
