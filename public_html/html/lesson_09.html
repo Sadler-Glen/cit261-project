@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="../javascript/t09_js_events.js"></script>
+        <link rel="shortcut icon" href="#"/>
+        <title>CIT-261:T09</title>
+    </head>
+    <body onload ="changeColor('myBox', 'red');">
+        <header>        
+            <div role="banner" id="page-header">
+                <p>CIT 261 - Glen Sadler</p>                   
+            </div>
+        </header>
+        <div class="wrapper">
+            <nav role="navigation" id="nav" class="menu">
+                <ul>
+                    <li><a href="../index.html">  Home  </a></li>
+                    <li><a href="lesson_08.html">Previous</a></li>
+                    <li><a href="#">  Next  </a></li>
+                    <li><a href="#example1">Example1</a></li>
+                    <li><a href="#example2">Example2</a></li>
+                    <li><a href="#example3">Example3</a></li>
+                </ul>
+            </nav>
+        </div>  
+        <main role="main" id="main">
+            <h2>Topic 09: Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events.</h2>
+            <hr>
+            <h2>Various events</h2>
+            <h3 id="example1">Example 1</h3>
+            <p>
+                The following is an example of an <code style="color:green">onload</code> event. 
+                The <code style="color:green">changeColor()</code> function
+                which changes the color from sky blue to red is called when this 
+                page is loaded. There are also examples of <code style="color:green">onclick</code> 
+                <code style="color:green">onmouseover,</code> and <code style="color:green">onmouseout,</code> 
+                events. When the user places his mouse over<code style="color:green">(onmouseover)</code> 
+                the <code style="color:green">'myBox'</code><code style="color:green">&lt;div&gt;</code> the  
+                box fades out. When the user moves the mouse away<code style="color:green">(onmouseout)</code>
+                the <code style="color:green">&lt;div&gt;</code> fades in. I have also incorporated an 
+                <code style="color:green">ontouchstart</code> and an <code style="color:green">ontouchend</code>
+                pair to fade-out and fade-in the <code style="color:green">&lt;div&gt;</code> on touch devices. 
+                The event handlers are, in these cases, Javascript functions which are called when these events occur.
+            </p>
+            <p>
+                A menu bar has been added to this page and now all previous pages to show the <code style="color:green">hover</code> property.
+            </p>
+            <p></p>
+            <button onclick="slideClosed('myBox');">Slide Close</button>
+            <button onclick="slideOpen('myBox');">Slide Open</button>
+            <button onclick="fadeOut('myBox');">Fade Out</button>
+            <button onclick="fadeIn('myBox');">Fade In</button>
+            <p></p>
+            <div ontouchstart="fadeOut('myBox');" ontouchend="fadeIn('myBox')" 
+                 onmouseover="fadeOut('myBox');" onmouseout="fadeIn('myBox');" 
+                 id = 'myBox' class = 'myBox'>
+                <p>Examples of transition - see codes below</p>
+            </div>
+            <P></P>
+            <button onclick="changeColor('myBox', 'red');">Red</button>
+            <button onclick="changeColor('myBox', 'yellow');">Yellow</button>
+            <button onclick="changeColor('myBox', 'green');">Green</button>
+            <button onclick="changeColor('myBox', '#9DCEFF');">Original</button> 
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/9cef127cae4d1a326b67d76761090c87.js"></script>   
+            </p>
+            <h3 id="example2">Example 2</h3>
+            <p>
+                The following is an example of <code style="color:green">onkeyup</code> and 
+                <code style="color:green">onblur</code>. When the user clicks inside the input
+                field for either the First Name or Last Name input fields and then leaves either 
+                field empty the validation rule causes the field color to turn red. By the same 
+                token, if text is typed into either field, and as soon as the key is released after
+                the the first key-press, the <code style="color:green">onkeyup </code>validation 
+                rule causes the field to turn green. The <code style="color:green">onblur </code>
+                calls the validate function when the input fields lose focus. Try it out!
+            </p>
+
+            <div id="inputValidate" class ="validate">
+                <table>
+                    <tr><td>First Name</td>
+                        <td><input type="text" id="fname" onkeyup="validateFields('fname')" 
+                                   onblur="validateFields('fname')"/>
+                        </td>
+                    </tr>
+                    <tr><td>Last Name</td>
+                        <td><input type="text" id="lname" onkeyup="validateFields('lname')" 
+                                   onblur="validateFields('lname')"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p></p>
+            <script src="https://gist.github.com/Sadler-Glen/68c367f9c614ae6223b602a57d488dea.js"></script>
+            <p></p>
+            <h3 id="example3">Example 3</h3>
+            <p>
+                The following animation utilizes <code style="color:green">onmouseover, onmouseout,</code> and,  
+                <code style="color:green">ontouchstart, ontouchend</code> for touch devices, to
+                start and stop the action of the moving globe. You can also start and stop the animation with the use of the 
+                buttons below which use the <code style="color:green">onclick</code> to trigger the associated action. I
+                must admit that this activity is not the greatest example of <code style="color:green">ontouchstart, ontouchend</code>, 
+                however, it should suffice to show the fundamentals.
+            </p>
+            <div onmouseover = "startMove();" onmouseOut = "stopMove();" ontouchstart = "startMove();" ontouchend = "stopMove();"id = "circle" class= "circle"></div>
+            <p class="dummy" style="height: 200px;"></p>
+            <button onclick="startMove();">Start Move</button>
+            <button onclick="stopMove();">Stop Move</button>
+            <p></p>
+            <script src="https://gist.github.com/Sadler-Glen/540eb07728754d308a7225864c5c8218.js"></script>
+            <p></p>
+        </main>
+        <footer role="contentinfo">
+            <br/>
+            <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
+        </footer>
+    </body>
+</html>

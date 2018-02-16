@@ -12,9 +12,16 @@
                 <p>CIT 261 - Glen Sadler</p>                   
             </div>
         </header>
-        <nav role="navigation" id="nav">
-            <p><a href="../index.html" title="CIT-216">Return to List</a></p>
-        </nav>
+        <div class="wrapper">
+            <nav role="navigation" id="nav" class="menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="lesson_03.html">Previous</a></li>
+                    <li><a href="lesson_05.html">Next</a></li>
+                    <li><a href="#request">Request Example</a></li>
+                </ul>
+            </nav>
+        </div>  
         <main role="main">
             <h2>Topic 04: Using XMLHttpRequest to Consume a JSON Web Service</h2>
             <hr>
@@ -26,18 +33,17 @@
                 browser and a web server. This enables data retrieval from a URL 
                 without the need to refresh an entire page.
             </p>
-            <h3>XMLHttpRequest JSON Example Code</h3>
+            <h3 id="request">XMLHttpRequest JSON Example Code</h3>
             <script src="https://gist.github.com/Sadler-Glen/ff450458cb588aa14ca7f425566ede74.js"></script>
             <p>
             <p>Return values of above code: <button id="btn">Display Client List</button>
             <div id="clientList"></div>
-        </p>
-        <script type="text/javascript" src="../javascript/t04_json_xmlhttp.js"></script>
-        <p></p>
-    </main>
-    <footer role="contentinfo">
-        <br>
-        <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
-    </footer>
-</body>
+            <script type="text/javascript" src="../javascript/t04_json_xmlhttp.js"></script>
+            <p></p>
+        </main>
+        <footer role="contentinfo">
+            <br/>
+            <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
+        </footer>
+    </body>
 </html>

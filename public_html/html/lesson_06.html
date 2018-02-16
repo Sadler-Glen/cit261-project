@@ -5,7 +5,7 @@
         <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
         <script type="text/javascript" src="../javascript/t06_dom_manipulate.js"></script>
         <link rel="shortcut icon" href="#"/>
-        <title>CIT-261:T07</title>
+        <title>CIT-261:T06</title>
     </head>
     <body>
         <header>        
@@ -13,9 +13,18 @@
                 <p>CIT 261 - Glen Sadler</p>                   
             </div>
         </header>
-        <nav role="navigation" id="nav">
-            <p><a href="../index.html" title="CIT-216">Return to List</a></p>
-        </nav>
+        <div class="wrapper">
+            <nav role="navigation" id="nav" class="menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="lesson_05.html">Previous</a></li>
+                    <li><a href="lesson_07.html">Next</a></li>
+                    <li><a href="#dom-ex1">Manipulation Example1</a></li>
+                    <li><a href="#dom-manipulate">Manipulation Example2</a></li>
+
+                </ul>
+            </nav>
+        </div>  
         <main role="main" id="main">
             <h2>Topic 06: DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.</h2>
             <hr>
@@ -34,7 +43,7 @@
                 with Javascript.                
             </p>
             <script src="https://gist.github.com/Sadler-Glen/9407c35f7d25d1d93b3fcf6c9ea379ca.js"></script>
-            <p>Return values of above code: <button id="btn01" type="button" onclick="manipulate_01()">DOM manipulate_01</button>
+            <p id="dom-ex1">Return values of above code: <button id="btn01" type="button" onclick="manipulate_01()">DOM manipulate_01</button>
             <div id="div1"></div>
             <h3 id="dom-manipulate">DOM Changes!</h3>
             <p></p>
@@ -47,7 +56,7 @@
             <p>Return values of above code to DOM Manipulation Example Below: <button id="btn04" type="button" onclick="manipulate_04()">Insert Before Li</button>
             <hr>
             <h3>
-                DOM Manipulation Example
+                DOM Manipulation Results
             </h3>
             <ol id = ourList>
                 <li>This is Line 1</li>

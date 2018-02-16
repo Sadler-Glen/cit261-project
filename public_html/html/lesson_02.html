@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
         <link rel="shortcut icon" href="#"/>
-        <title>CIT-261:L02</title>
+        <title>CIT-261:T02</title>
     </head>
     <body>
         <header>        
@@ -12,13 +12,22 @@
                 <p>CIT 261 - Glen Sadler</p>                   
             </div>
         </header>
-        <nav role="navigation" id="nav">
-            <p><a href="../index.html" title="CIT-216">Return to List</a></p>
-        </nav>
+        <div class="wrapper">
+            <nav role="navigation" id="nav" class="menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="lesson_01.html">Previous</a></li>
+                    <li><a href="lesson_03.html">Next</a></li>
+                    <li><a href="#create">Object Create</a></li>
+                    <li><a href="#inherit">Inheritance</a></li>
+                    <li><a href="#instantiate">Instantiation</a></li>
+                </ul>
+            </nav>
+        </div>  
         <main role="main">
             <h2>Topic 02: Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h2>
             <hr>
-            <h3>Object Create function</h3>
+            <h3 id="create">Object Create function</h3>
             <p>In javascript we can create an object using:
             <ul>
                 <li><code>var user = {}; <span style="color:green">// "object literal" syntax</span></code></li>
@@ -36,6 +45,7 @@
                     };
                 </code>
             </blockquote>
+            
             <p>In our <code><span style="color:green">user</span></code> object we have two properties:</p>
             <ol>
                 <li>The first property has the name <span style="color:green">"name"</span> 
@@ -129,7 +139,7 @@
                 A data property is one that can get and set a value.
             <p></p>
             <hr>
-            <h3>Inheritance</h3>
+            <h3 id="inherit">Inheritance</h3>
             <pre>
     <span style="color:green">// Inheritance</span>
     var btn = document.getElementById("btn03");
@@ -162,7 +172,7 @@
             <p></p>
         </blockquote>
         <hr>
-        <h3>Instantiation</h3>
+        <h3 id="instantiate">Instantiation</h3>
         <p>As previously discussed, there are a number of ways to create an 
             object in Javascript. Below are ways and techniques that are used 
             to do so.</p>
@@ -184,6 +194,7 @@
         <pre>
     <span style="color:green">// Functional Instantiation
     // implement a constructor function</span>
+    var pizzaWrite3 = document.getElementById("pizza_03");
     var btn = document.getElementById("btn04");
     btn.addEventListener("click", function () {
         var Pizza = function (crust, toppings, hasBacon){
@@ -322,7 +333,7 @@
         btn07.classList.add("hide-btn");
     });        
         </pre>
-                <blockquote>
+        <blockquote>
         <p>Return values of above code: <button id='btn07'>Go</button></p>
         <div id="pizza_07"></div>
         </blockquote>
@@ -330,7 +341,7 @@
         <p></p>
     </main>
     <footer role="contentinfo">
-        <br>
+        <br/>
         <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
     </footer>
 </body>

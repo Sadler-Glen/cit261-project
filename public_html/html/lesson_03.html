@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
         <link rel="shortcut icon" href="#"/>
-        <title>CIT-261:L03</title>
+        <title>CIT-261:T03</title>
     </head>
     <body>
         <header>        
@@ -12,9 +12,17 @@
                 <p>CIT 261 - Glen Sadler</p>                   
             </div>
         </header>
-        <nav role="navigation" id="nav">
-            <p><a href="../index.html" title="CIT-216">Return to List</a></p>
-        </nav>
+        <div class="wrapper">
+            <nav role="navigation" id="nav" class="menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="lesson_02.html">Previous</a></li>
+                    <li><a href="lesson_04.html">Next</a></li>
+                    <li><a href="#jparse">JSON parse</a></li>
+                    <li><a href="#jstring">JSON stringify</a></li>
+                </ul>
+            </nav>
+        </div>  
         <main role="main">
             <h2>Topic 03: JSON Parse, Stringify</h2>
             <hr>
@@ -52,7 +60,7 @@
                 </code>
             </blockquote>
             <script src="https://gist.github.com/Sadler-Glen/97be11810145f055f0dacf0cb1a0205f.js"></script>
-            <h4>
+            <h4 id="jparse">
                 JSON.parse() method
             </h4>
             <p>
@@ -76,7 +84,7 @@
         </blockquote>
         <script type="text/javascript" src="../javascript/t03_parse_01.js"></script>
         <p></p>
-        <h4>
+        <h4 id="jstring">
             JSON.stringify() method
         </h4>
         <p>
@@ -93,7 +101,7 @@
         <p></p>
         </main>
         <footer role="contentinfo">
-            <br>
+            <br/>
             <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
         </footer>
     </body>

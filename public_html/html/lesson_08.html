@@ -13,13 +13,22 @@
                 <p>CIT 261 - Glen Sadler</p>                   
             </div>
         </header>
-        <nav role="navigation" id="nav">
-            <p><a href="../index.html" title="CIT-216">Return to List</a></p>
-        </nav>
+        <div class="wrapper">
+            <nav role="navigation" id="nav" class="menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="lesson_07.html">Previous</a></li>
+                    <li><a href="lesson_09.html">Next</a></li>
+                    <li><a href="#transition">Transition</a></li>
+                    <li><a href="#transform">Transform</a></li>
+                    <li><a href="#animation">Animation</a></li>
+                </ul>
+            </nav>
+        </div>  
         <main role="main" id="main">
             <h2>Topic 08: Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript.</h2>
             <hr>
-            <h2>Transition</h2>
+            <h2 id = "transition">Transition</h2>
             <p></p>
             <button onclick="slideClosed('myBox');">Slide Close</button>
             <button onclick="slideOpen('myBox');">Slide Open</button>
@@ -39,7 +48,7 @@
                 <script src="https://gist.github.com/Sadler-Glen/87a26fd2849ec2ea71acfa2dc282747a.js"></script>   
             </p>
             <hr>
-            <h2>Transformation</h2>
+            <h2 id="transform">Transformation</h2>
             <h4>Example of Transformation (Rotate)</h4>
             <p></p>
             <img id="img" src="../content/images/wheel.png" alt="wheel">
@@ -51,7 +60,7 @@
             <p>
                 <script src="https://gist.github.com/Sadler-Glen/efa5ec6870d3e6ae898179d6504c0162.js"></script>    
             </p>
-            <h2>Animation using Canvas</h2>
+            <h2 id="animation">Animation using Canvas</h2>
             <canvas id="myCanvas" width="500" height="500" style="border:2px solid #d3d3d3; background-color: black"></canvas>
             <p></p>
             <button onclick="doAnimation();">Start Animation</button>

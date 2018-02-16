@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
         <link rel="shortcut icon" href="#"/>
-        <title>CIT-261:T04</title>
+        <title>CIT-261:T05</title>
     </head>
     <body>
         <header>        
@@ -12,9 +12,16 @@
                 <p>CIT 261 - Glen Sadler</p>                   
             </div>
         </header>
-        <nav role="navigation" id="nav">
-            <p><a href="../index.html" title="CIT-216">Return to List</a></p>
-        </nav>
+        <div class="wrapper">
+            <nav role="navigation" id="nav" class="menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="lesson_04.html">Previous</a></li>
+                    <li><a href="lesson_06.html">Next</a></li>
+                    <li><a href="#lstorage">Storage Example</a></li>
+                </ul>
+            </nav>
+        </div>  
         <main role="main">
             <h2>Topic 05: Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</h2>
             <hr>
@@ -51,7 +58,7 @@
                 <code>sessionStorage.getItem()</code> - retrieves from session storage<br/>
                 <code>sessionStorage.removeItem()</code> - removes from session storage<br/>
             </blockquote>
-            <h4>Code Example</h4>
+            <h4 id="lstorage">Local Storage Example</h4>
             <script src="https://gist.github.com/Sadler-Glen/68c7df99af807ac632424ff5d2fb5c13.js"></script>
             <p>Return values of above code: <button id="btn01">Retrieve Local storage</button>
             <div id="retrieveLocalStorage"></div>
@@ -59,7 +66,7 @@
             <p></p>
         </main>
         <footer role="contentinfo">
-            <br>
+            <br/>
             <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
         </footer>
     </body>

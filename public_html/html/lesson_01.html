@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
         <link rel="shortcut icon" href="#"/>
-        <title>CIT-216:L01</title>
+        <title>CIT-216:T01</title>
 
     </head>
     <body>
@@ -13,15 +13,26 @@
                 <p>CIT 261 - Glen Sadler</p>                   
             </div>
         </header>
-        <nav role="navigation" id="nav">
-            <p><a href="../index.html" title="CIT-216">Return to List</a></p>
-        </nav>
+        <div class="wrapper">
+            <nav role="navigation" id="nav" class="menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#">Previous</a></li>
+                    <li><a href="lesson_02.html">Next</a></li>
+                    <li><a href="#variables">Variables</a></li>
+                    <li><a href="#functions">Functions</a></li>
+                    <li><a href="#loops">Loops</a></li>
+                    <li><a href="#conditionals">Conditionals</a></li>
+                    <li><a href="#arrays">Arrays</a></li>                    
+                </ul>
+            </nav>
+        </div>  
         <main role="main">
             <h2>Topic 01: Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays </h2>
             <hr>
             <p>Before we tackle Loops, Conditional Statements, Arrays and Associative Arrays
                 it is probably prudent that we explain variables and functions in the first instance.</p>
-            <h3>Variables & Functions</h3>
+            <h3 id="variables">Variables & Functions</h3>
             <blockquote>The variables in Javascript can be thought of as being named containers.
                 You place data in the container and then refer to the container by naming 
                 the container. Before you use a variable in a program you must <span style="color:green">declare</span> 
@@ -44,7 +55,7 @@
                 <li>Javascript variable names are also case sensitive. For example <span style="color:green">Name</span>
                     and <span style="color:green">name</span> are two different variables.</li>
             </ul>
-            <h3>Functions & Parameters</h3>
+            <h3 id="functions">Functions & Parameters</h3>
             <blockquote>A Javascript function is a block of code designed to complete a particular task
                 and is executed or runs when called or invoked.<br><br>
                 <h4>For example:</h4>
@@ -109,7 +120,7 @@
                 </pre>
             </blockquote>
             <hr>
-            <h2>Loops</h2>
+            <h2 id="loops">Loops</h2>
             <p>There are several kinds of loops utilised in Javascript which essentially end up doing the same thing. They
                 are used to repeat an action a number of times depending on the requirements of the function that it is 
                 implemented in. Our example Loop below repeats the action "n" times i.e., the number that is input by the
@@ -162,7 +173,7 @@
                     <blockquote>statement's</blockquote>
                     }</code></blockquote>
             <hr>
-            <h2>Conditional Statements</h2>
+            <h2 id="conditionals">Conditional Statements</h2>
             <p>As in every other programming language, the code in Javascript needs 
                 to make decisions based on varying conditions, for example, something as
                 simple as, depending on the weather, what footwear should I wear?<br><br>
@@ -224,7 +235,7 @@
                 + footwear + ".";
     }</pre>
             <hr>
-            <h2>Arrays</h2>
+            <h2 id="arrays">Arrays</h2>
             <p>The Array is an object that is used to store multiple values in a single object. <br>
                 Each array value can easily be accessed individually. You can create an array by declaring it, initialising it or with the use of the 
                 <code><span style="color:green">new</span></code> keyword.<br>
@@ -342,7 +353,7 @@
         <script type="text/javascript" src="../javascript/t01_car.js"></script>    
     </main>
     <footer role="contentinfo">
-        <br>
+        <br/>
         <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
     </footer>
 </body>
