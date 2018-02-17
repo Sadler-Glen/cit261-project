@@ -2,7 +2,7 @@
 // to resize the video
 function smaller(){
     var divElement = document.querySelector("#video");
-    divElement.classList.remove('original');
+    divElement.classList.add('smaller');
     divElement.classList.add('smaller');    
     divElement.classList.remove('larger');   
 }
@@ -55,5 +55,7 @@ function doAnimation(){
         ctx.fill();       
     }, 30); // setInterval set 30 milliseconds
 };
+
+
 
 

@@ -28,11 +28,18 @@
         <main role="main" id="main">
             <h2>Topic 10: HTML5 Tags - Video, Audio, and Canvas.</h2>
             <hr>
+            <p>
+                "This is my all favorite choral - Consider the Lilies of the fields" 
+            </p>
+            <p>
+                Both my audio and video examples are of this beautiful rendition by the Mormon Tabernacle Choir.
+            </p>
             <h3 id="audio_ex">Audio Example</h3>
             <p></p>
             <div id="audio">
                 <audio controls>
                     <source src="../content/audio/consider_the_lilies.mp3" type="audio/mpeg">
+                    Your browser does not support the audio player.
                 </audio>
             </div>
             <h3 id="video_ex">Video Example</h3>
@@ -40,6 +47,7 @@
             <div>
                 <video id="video" class="original" controls>
                     <source src="../content/video/consider_the_lilies.mp4" type="video/mp4">
+                    Your browser does not support the video player.
                 </video>
             </div>
             <button id="btn01" type="button" onclick="smaller()">Smaller</button>&nbsp;
@@ -54,6 +62,10 @@
             <p>
                 <script src="https://gist.github.com/Sadler-Glen/16320e73d26e6ed8ae7d333ae0196a88.js"></script>   
             </p>
+            <div id="globe">
+                <div id="earth"></div>
+                <!--<span style="color:hotpink"><p>div id="earth" div</p></span>-->
+            </div>
         </main>
         <footer role="contentinfo">
             <br/>
