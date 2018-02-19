@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="../javascript/t12_transform.js"></script>
+        <link rel="shortcut icon" href="#"/>
+        <title>CIT-261:T12</title>
+    </head>
+    <body>
+        <header>        
+            <div role="banner" id="page-header">
+                <p>CIT 261 - Glen Sadler</p>                   
+            </div>
+        </header>
+        <div class="wrapper">
+            <nav role="navigation" id="nav" class="menu">
+                <ul>
+                    <li><a href="../index.html">  Home  </a></li>
+                    <li><a href="lesson_11.html">Previous</a></li>
+                    <li><a href="lesson_13.html">  Next  </a></li>
+                    <li><a href="#transform1_ex">Transition1</a></li>
+                    <li><a href="#transform2_ex">Transition2</a></li>
+                </ul>
+            </nav>
+        </div>
+        <main role="main" id="main">
+            <h2>Topic 12: Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries (Thought Library).</h2>
+            <hr>
+            <h3 id="transform1_ex">Transform Example 1</h3>
+            <p>
+                This <code style="color:green">rotate</code> transformation is setup with a 2.5 second delay to start.  
+                Also included in this is a <code style="color:green">transition</code> of color from magenta to blue. 
+                Their is also a <code style="color:green">transition</code> of the box size and text size. 
+                This <code style="color:green">transform</code> is triggered in CCS by the 
+                <code style="color:green">setInterval()</code>. The rotation is set to 270&#176.        
+            </p>
+            <div style="height: 120px" style="width: 250px" class="parent">                
+                <div class="box">Cool!</div>                
+            </div>
+            <p></p>
+            <button id="btn0" onclick="transform();">Transform</button>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/50044b9e01a7217321a4c98ae67c0b28.js"></script>
+            </p>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/75a2cd7fe3fd0131efc7b37a36427b43.js"></script>
+            </p>
+            <p></p>
+            <h3 id="transform2_ex">Transform Example 2</h3>
+            <P>
+                This example uses <code style="color:green">transform: rotate</code> and also 
+                <code style="color:green">transition: 300px</code> to accomplish 
+                the task of moving(<code style="color:green">transform</code>) from one place to another, 
+                and <code style="color:green">transform: rotate</code>) to make the circle appear as a wheel from
+                one position to another. The <code style="color:green">rotate</code> is set to 720&#176. The method to 
+                activate the animation is the <code style="color:green">#wheel:hover</code> in our CSS. 
+            </P>
+            <div id="wheel">
+                <p id="wheelTxt">Turning Wheel</p>
+            </div>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/75a2cd7fe3fd0131efc7b37a36427b43.js"></script>
+            </p>
+        </main>
+        <footer role="contentinfo">
+            <br/>
+            <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
+        </footer>
+    </body>
+</html>

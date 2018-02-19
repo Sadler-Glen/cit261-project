@@ -35,6 +35,7 @@ var degrees = 0;
 
 function rotateCW(img, speed){
     var btn01 = document.getElementById("btn01");
+    var btn03 = document.getElementById("btn03");
     var image = document.getElementById(img);
     image.style.transform = "rotate("+degrees+"deg)";
     loop = setTimeout('rotateCW(\''+img+'\','+speed+')',speed);
@@ -43,10 +44,12 @@ function rotateCW(img, speed){
         degrees = 1;
     }
     btn01.classList.add("hide-btn");
+    btn03.classList.add("hide-btn");   
     document.getElementById("status").innerHTML = "Rotation : "+degrees+"deg";
 }
 
 function rotateCCW(img, speed){
+    var btn01 = document.getElementById("btn01");
     var btn03 = document.getElementById("btn03");
     var image = document.getElementById(img);
     image.style.transform = "rotate("+degrees+"deg)";
@@ -55,6 +58,7 @@ function rotateCCW(img, speed){
     if(degrees < -359){
         degrees = -1;
     }
+    btn01.classList.add("hide-btn");
     btn03.classList.add("hide-btn");
     document.getElementById("status").innerHTML = "Rotation : "+degrees+"deg";
 }
@@ -102,7 +106,7 @@ function doAnimation(){
     }, 30); // setInterval set 30 milliseconds
 };
 
-// Animation with circle
+// Animation with circle using keyframes
 // Trigger circle animation by adding the circle.style.animation
 // to the circle div
 function startMove() {

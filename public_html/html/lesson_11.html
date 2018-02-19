@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="../javascript/t11_transition.js"></script>
+        <link rel="shortcut icon" href="#"/>
+        <title>CIT-261:T11</title>
+    </head>
+    <body>
+        <header>        
+            <div role="banner" id="page-header">
+                <p>CIT 261 - Glen Sadler</p>                   
+            </div>
+        </header>
+        <div class="wrapper">
+            <nav role="navigation" id="nav" class="menu">
+                <ul>
+                    <li><a href="../index.html">  Home  </a></li>
+                    <li><a href="lesson_10.html">Previous</a></li>
+                    <li><a href="lesson_12.html">  Next  </a></li>
+                    <li><a href="#tran1_ex">Transition1</a></li>
+                    <li><a href="#tran2_ex">Transition2</a></li>
+                </ul>
+            </nav>
+        </div>
+        <main role="main" id="main">
+            <h2>Topic 11: Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries (Thought Library).</h2>
+            <hr>
+            <h3 id="tran1_ex">Transition Example 1</h3>
+                        <p>
+                This is an example of <code style="color:green">transition</code>. 
+                There are 3 elements that go through a <code style="color:green">transition</code>. 
+                The box size, text size, and there is a <code style="color:green">transition</code> of 
+                color from purple to blue. This is triggered by a Javascript function but 
+                the <code style="color:green">transition</code> is purely CSS. 
+                The <code style="color:green">transition</code> is set to run 
+                2.5s and takes a short period to actually start.       
+            </p>
+            <div class="parent">                
+                <div class="box">Cool!</div>                
+            </div>
+                <p></p>
+                <button onclick="interval();">Transition 1</button>
+                <p>
+                    <script src="https://gist.github.com/Sadler-Glen/a9c6bbc4bbbfec92d07886a2d2f490a1.js"></script>                </p>
+                <p>
+                    <script src="https://gist.github.com/Sadler-Glen/bf70cabd183af9cd0dad1a7f622b4bca.js"></script>
+                </p>
+            <h3 id="tran2_ex">Transition Example 2</h3>
+            <p>
+                This example is purely CSS and uses the <code style="color:green">square:hover</code> to
+                activate the transition. You will note that with the <code style="color:green">transform 10s ease</code> 
+                the <code style="color:green">transition</code> starts at a reasonable pace but slows down significantly at the end.
+            </p>
+            <p></p>
+            <div id="square"></div>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/41250ef201618b17d68dceaa91773914.js"></script>
+            </p>
+        </main>
+        <footer role="contentinfo">
+            <br/>
+            <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
+        </footer>
+    </body>
+</html>

@@ -28,7 +28,7 @@ body{
 }
 body{
     background-color: #E0F9F4;
-    /*background-image: url("../content/images/bg.jpg");*/
+    background-image: url("../content/images/bg.jpg");
     background-attachment: fixed;
     background-position: center;
     background-size: cover; 
@@ -41,19 +41,29 @@ main[role] {
 }
 
 [role=banner] {
+    width: 100%;
     background-color: rgba(241, 241, 241,.4);
-    border-bottom: solid 10px #0e223d;
+    /*padding: 20px auto;*/
+    border-bottom: solid 2px #0e223d;
 }
-header, main[role], nav, footer[role] {
-    width: 70.5%;
+
+main[role], nav, footer[role] {
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
+
+header {
+    width: 71%;
+    margin: auto;
+}
+
 main[role]{
     width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
+
 /* Remove default list marker, margin and padding from these lists */
 ul,ol{
     list-style: none;
@@ -66,15 +76,15 @@ a {
     text-decoration: none;
 }
 
-header, main, nav {
+main, nav, footer {
     margin: 1.25rem auto;
     padding: .5rem;
     /*max-width:900px;*/
 }
 
-/*footer{
+footer {
     margin: 1.25rem auto;
-}*/
+}
 .gist {width:100% !important;
 }
 .gist-file
@@ -159,6 +169,7 @@ the video in topic 10*/
 
 }
 
+/*T08 and T13 - Animations with key frames*/
 .capGuy{
     background: url(../content/images/capguy-walk.png);
     width: 120px;
@@ -169,11 +180,14 @@ the video in topic 10*/
     to { background-position: -960px; }
 }
 
+/*T08 and T13 - Animations with key frames*/
 .circle{
     width: 75px;
     height: 75px;
     border-radius: 100%;
     background: greenyellow;
+    border-style: solid;
+    border-color: #1C5696;
 }
 @keyframes animate_01 {
     0% {transform: translateX(0px);}
@@ -182,8 +196,21 @@ the video in topic 10*/
     75%{transform: translateX(0px) translateY(200px);}
     100%{transform: translateX(0px) translateY(0px);}
 }
+#parent{
+    border-style: solid;
+    border-width: thin;
+    width: 280px;
+    height: 280px;
+}
+/* The next 4 code sets are Transition 
+and Transform example in Topic 12 */
+.parent { 
+    width: 250px; 
+    height:250px;
+    border: solid 1px #666;
+    
+}
 
-.parent { width: 250px; height:125px;}
 .box {
     width: 100px;
     height: 100px;
@@ -195,11 +222,11 @@ the video in topic 10*/
     position: relative;
     transition-property: width height background-color font-size left top transform color;
     transition-duration: 2s;
-    transition-timing-function: ease-in-out;
-    /*transition-timing-function: linear;*/
+    /*transition-timing-function: ease-in-out;*/
+    transition-timing-function: linear;
 }
 .box1{
-    transform: rotate(450deg);
+    transform: rotate(270deg);
     width: 50px;
     height: 50px;
     background-color: blue;
@@ -210,9 +237,77 @@ the video in topic 10*/
     position: relative;
     transition-property: width height background-color font-size left top transform color;
     transition-duration: 2s;
-    transition-timing-function: ease-in-out;
-    /*transition-timing-function: linear;*/
+    /*transition-timing-function: ease-in-out;*/
+    transition-timing-function: linear;
 }
+
+.box2{
+    /*transform: rotate(270deg);*/
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    color: yellow;
+    font-size: 18px;
+    left: 200px;
+    top: 190px;
+    position: relative;
+    transition-property: width height background-color font-size left top transform color;
+    transition-duration: 2s;
+    /*transition-timing-function: ease-in-out;*/
+    transition-timing-function: linear;
+}
+
+#box3{
+    width: 200px;
+    height: 200px;
+    background-color: purple;
+    color: white;
+    font-size: 25px;
+    left: 0px;
+    top: 10px;
+    position: relative;
+    transition-property: width height background-color font-size left top transform color;
+    transition-duration: 2s;
+    /*transition-timing-function: ease-in-out;*/
+    transition-timing-function: linear;    
+}
+#box3:hover{
+    transition: transform 2s ease;
+}
+
+/* Topic 12 Transform 
+    The next 3 sets of styles are used  in topic 12
+    We have transform, translate, rotate, and transition*/
+#wheel{
+    width: 200px;
+    height: 200px;
+    background-color: greenyellow;
+    border: 10px dashed black;
+    border-radius: 110px;
+}
+
+#wheelTxt {
+    margin: 40px;
+}
+
+#wheel:hover{
+    transform: translate(300px) rotate(720deg);
+    transition: transform 10s ease;
+}
+
+/* Topic 11 transition example 2 */
+#square{
+    width: 200px;
+    height: 200px;
+    background-color: greenyellow;
+    border: 10px dashed black;
+}
+
+#square:hover{
+    transform: translate(300px);
+    transition: transform 10s ease;
+}
+
 /*h2{
     font-size: 6vw;  Roughly 6% of the screen width 
     font-family: 'Roboto Slab', serif;
@@ -260,7 +355,8 @@ nav a{
     text-align: center;
     color: #fff;
     display: block;
-    padding: 5px 30px 5px 30px;
+    /*padding: 5px 30px 5px 30px;*/
+    padding: 10px 20px 10px 20px;        
 }
 
 nav a:active{
@@ -276,6 +372,7 @@ nav a:hover {
 @media screen and (min-width: 768px){
     nav ul{
         display: flex;
+        justify-content: flex-start;
     }
 
     nav li{
@@ -351,7 +448,11 @@ nav a:hover {
     background: #fff;
 }*/
 
-
+.marked{
+    font-style: italic;
+    font-weight: bold;
+    background-color: #c7d7ea;
+}
 
 footer[role] {
     min-height: 80px;
@@ -361,7 +462,7 @@ footer[role] {
 
 footer[role] span {
     color: #FFF;
-    font-weight: bold;    
+    font-weight: bold;
 }
 
 footer[role]{

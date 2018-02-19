@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="../style/style.css" type="text/css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="../javascript/t13_animation.js"></script>
+        <link rel="shortcut icon" href="#"/>
+        <title>CIT-261:T13</title>
+    </head>
+    <body>
+        <header>        
+            <div role="banner" id="page-header">
+                <p>CIT 261 - Glen Sadler</p>                   
+            </div>
+        </header>
+        <div class="wrapper">
+            <nav role="navigation" id="nav" class="menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="lesson_12.html">Previous</a></li>
+                    <li><a href="#">Next</a></li>
+                    <li><a href="#animate1_ex">Animation 1</a></li>
+                    <li><a href="#animate2_ex">Animation 2</a></li>
+                </ul>
+            </nav>
+        </div>  
+        <main role="main" id="main">
+            <h2>Topic 13: Designing, Defining, and Triggering CSS3 Animations without Custom Libraries (Thought Library).</h2>
+
+            <h2>Animations using CSS and @keyframes</h2>
+            <p>
+                There are so many ways that one can create animations in both CSS and 
+                 Javascript. With the following animations I have used <code><span style="color:green">
+                @keyframes</span></code> and <code><span style="color:green">animate </span></code>in 
+                CSS to achieve the animation and triggered from Javascript.
+            </p>
+            <h3 id='animate1_ex'>Animation Example 1</h3>
+            <p></p>
+            <div id="parent">
+            <div id="circle" class="circle"></div>
+                <p class="dummy" style="height: 200px;"></p>
+            </div>
+            <button onclick="startMove()">Start Move</button>
+            <button onclick="stopMove()">Stop Move</button>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/68febf59a1f0096fbfbe4dc3d7c50355.js"></script>
+            </p>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/4aa414cec1c8b0f3727aaf1667e21960.js"></script>
+            </p>
+            <h3 id='animate2_ex'>Animation Example 2</h3>
+            <p>
+                I was able to grab a sprite sheet with 8 graphics on the sheet. 
+                the original sheet was 600px x 128px. I was able to enlarge it in
+                Photoshop to 960px x 211px. Each graphic was then 120px x 211px. 
+                This size of each sprite was required to ensure that the stylesheet 
+                was coded correctly. See the style sheet code below.
+            </p>
+            <div id="capGuy" class="capGuy"></div>
+            <p></p>
+            <button id="startWalk" onclick="startWalk();">Start</button>            
+            <button id="stopwalk" onclick="stopWalk();">Stop</button> 
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/b749402b0aaa1bab657301c8aa407bdd.js"></script>
+            </p>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/c3cec4dc7faa3fa2c066a544aa581d2f.js"></script>
+            </p>
+        </main>
+        <footer role="contentinfo">
+            <br/>
+            <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
+        </footer>
+    </body>
+</html>
