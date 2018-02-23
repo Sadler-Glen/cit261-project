@@ -1,4 +1,11 @@
 // T013 Animatition using keyframes
+// This function will hide <div id=manipulate></div>
+function animateIt(){
+    document.getElementById("myHeading").classList.toggle("myHeading");
+    document.getElementById("myContent").classList.toggle("myContent");
+    document.getElementById("btn20").classList.toggle("btn20");
+} 
+
 // Animation with circle using keyframes
 // Trigger circle animation by adding the circle.style.animation
 // to the circle div

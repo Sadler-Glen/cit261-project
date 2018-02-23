@@ -21,23 +21,79 @@
                     <li><a href="#">Next</a></li>
                     <li><a href="#animate1_ex">Animation 1</a></li>
                     <li><a href="#animate2_ex">Animation 2</a></li>
+                    <li><a href="#animate3_ex">Animation 3</a></li>
+                    <li class="has-children" ><a href="#">Topics
+                            <span class="arrow arrow-down" ></span>
+                        </a>
+                        <ul class="drop-nav">
+                            <li><a href="lesson_01.html">Topic 01</a></li>
+                            <li><a href="lesson_02.html">Topic 02</a></li>
+                            <li><a href="lesson_03.html">Topic 03</a></li>
+                            <li><a href="lesson_04.html">Topic 04</a></li>
+                            <li><a href="lesson_05.html">Topic 05</a></li>
+                            <li><a href="lesson_06.html">Topic 06</a></li>
+                            <li><a href="lesson_07.html">Topic 07</a></li>
+                            <li><a href="lesson_08.html">Topic 08</a></li>
+                            <li><a href="lesson_09.html">Topic 09</a></li>
+                            <li><a href="lesson_10.html">Topic 10</a></li>
+                            <li><a href="lesson_11.html">Topic 11</a></li>
+                            <li><a href="lesson_12.html">Topic 12</a></li>
+                            <li><a href="#">Topic 13</a></li>
+                        </ul>
+                    </li> 
                 </ul>
             </nav>
         </div>  
         <main role="main" id="main">
             <h2>Topic 13: Designing, Defining, and Triggering CSS3 Animations without Custom Libraries (Thought Library).</h2>
             <hr>
-            <h2>Animations using CSS and @keyframes</h2>
+            <div class="shake">
+                <h2>Animations using CSS and @keyframes</h2>
+            </div>
+            <p></p>
+            <h3 id="animate1_ex">Animation Example 1</h3>
+            <p>
+                This is an example of animation of Text where the heading comes from the top 
+                and the body of text comes in from the side. There is also a button which does 
+                a rotation. This is purely CSS using @keyframes to achieve the end result. I have, 
+                however, used javascript function to run this using a <code style="color:green">onclick</code> 
+                HTML5 event to trigger this, which probably would not be the way this 
+                would be done in the real world but will suffice for this demonstration.
+             
+            </p>
+            <div id="myButton1">
+                <a onclick="animateIt()" id="btn21" class="btn21" href="#">Toggle Animation</a>
+            </div>
+            <div>
+                <h1 id="myHeading" class="">This is an Example of Animation</h1>
+            </div>
+            <p></p>
+            <div id="myContent" class="">
+                CSS animations make it possible to animate transitions from one CSS style 
+                configuration to another. Animations consist of two components, a style 
+                describing the CSS animation and a set of keyframes that indicate the start.
+                To create a CSS animation sequence, you style the element you want to animate 
+                with the animation property or its sub-properties. This lets you configure 
+                the timing, duration, and other details of how the animation sequence should 
+                progress. This does not configure the actual appearance of the animation, 
+                which is done using the @keyframes at-rule.
+            </div>
+            <div id="myButton">
+                <a  id="btn20" href="#" class="">Hover over me</a>
+            </div>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/a59e3aa8888a05cba245cdfa1b6c63ad.js"></script>
+            </p>
             <p>
                 There are so many ways that one can create animations in both CSS and 
-                 Javascript. With the following animations I have used <code><span style="color:green">
-                @keyframes</span></code> and <code><span style="color:green">animate </span></code>in 
-                CSS to achieve the animation and triggered from Javascript.
+                Javascript. With the following animation I have used <code><span style="color:green">
+                        @keyframes</span></code> and <code><span style="color:green">animate </span></code>in 
+                CSS to achieve the animation and triggered with Javascript.
             </p>
-            <h3 id='animate1_ex'>Animation Example 1</h3>
+            <h3 id='animate2_ex'>Animation Example 2</h3>
             <p></p>
             <div id="parent">
-            <div id="circle" class="circle"></div>
+                <div id="circle" class="circle"></div>
                 <p class="dummy" style="height: 200px;"></p>
             </div>
             <p></p>
@@ -49,7 +105,7 @@
             <p>
                 <script src="https://gist.github.com/Sadler-Glen/4aa414cec1c8b0f3727aaf1667e21960.js"></script>
             </p>
-            <h3 id='animate2_ex'>Animation Example 2</h3>
+            <h3 id='animate3_ex'>Animation Example 3</h3>
             <p>
                 I was able to grab a sprite sheet with 8 graphics on the sheet. 
                 the original sheet was 600px x 128px. I was able to enlarge it in
