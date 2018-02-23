@@ -353,8 +353,8 @@ and Transform example in Topic 12 */
   margin-top:40px;
   opacity: 0;
   animation-name: btn20;
-  animation-duration: 3s;
-  animation-delay: 3s;
+  animation-duration: 5s;
+  animation-delay: 5s;
   animation-fill-mode: forwards;
 
   transition-property: transform;
@@ -372,10 +372,10 @@ and Transform example in Topic 12 */
 }
 
 .btn21{
-  color: green;
+  color: blue;
   text-decoration: none;
   padding: 1rem 2rem;
-  border: green 2px solid;
+  border: blue 2px solid;
   margin-top:40px;
 }
 
@@ -384,7 +384,7 @@ and Transform example in Topic 12 */
   line-height: 1.3;
   position: relative;
   animation: myHeading;
-  animation-duration: 3s;
+  animation-duration: 5s;
   animation-fill-mode: forwards;
 }
 
@@ -396,7 +396,7 @@ and Transform example in Topic 12 */
 .myContent {
   position: relative;
   animation-name: myContent;
-  animation-duration: 3s;
+  animation-duration: 5s;
   animation-fill-mode: forwards;
 }
 
@@ -405,98 +405,51 @@ and Transform example in Topic 12 */
   100% {left: 0;}
 }
 
+/* Topic 13 Animation 3 */
 
-/*h2{
-    font-size: 6vw;  Roughly 6% of the screen width 
-    font-family: 'Roboto Slab', serif;
-    border: solid 1px #666; 
-    padding-bottom: 0;
-    margin-bottom: 0;
+.disk{
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin: 40px;
+}
+#script{
+    margin: 20px auto;
 }
 
-h3{
-    font-size: 4.5vw;  Roughly 6% of the screen width 
-    font-family: 'Roboto Slab', serif;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border: solid 1px #666;  used for diagnosis 
-}
-h1, h2, h3, h4 {
-    color: #073674;
-}
-h4{
-    font-size: 16px;
-    font-family: 'Roboto Slab', serif;
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-h5,h6{
-    font-size: 1em;  Same size as text 
-}
-p{
-    line-height: 1.5;
-    font-weight: 700;
-     border: solid 1px #666;
-//used for diagnostic purposes
-}*/
-/*nav{
-    background: #0E223D;
+.btn22{
+  color: blue;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border: blue 2px solid;
+  margin: 100px auto;
+  padding: 100px auto;
+  
 }
 
-nav ul{
-    list-style-type: none;
-    padding: 0;    
+#myDisk{
+    animation: slide 4s infinite;
 }
 
-nav a{
-    text-decoration: none;
-    text-align: center;
-    color: #fff;
-    display: block;
-    padding: 5px 30px 5px 30px;
-    padding: 10px 20px 10px 20px;        
-}
-
-nav a:active{
-    background-color: #c4c0c3
-}
-
-nav a:hover {
-    background-color: #555;
-}
-
-
-
- flex styles 
-
-@media screen and (min-width: 768px){
-    nav ul{
-        display: flex;
-        justify-content: flex-start;
+@keyframes slide{
+    0%{
+        transform: translate3d(0px, 0px, 0px);
+        animation-timing-function: ease-in;
     }
+    50%{
+        transform: translate3d(400px, 0px, 0px);
+        animation-timing-function: ease-out;
+        opacity: .05;
+    }
+    100%{
+        transform: translate3d(0px, 0px, 0px);
+        animation-timing-function: ease-in;
+    }
+}
 
-    nav li{
-        flex: 1 0 0;
-    }
-    
-    .drop-down{
-        display: flex;
-    }
-    
-    .drop-nav{
-        display: none;
-        flex-direction: column;
-    }
-    
-    .drop-nav li{
-        border-bottom: solid 2px rgba(255,255,255,.2);
-    }
-    
-    .drop-down:hover > .drop-nav {
-        display:flex;
-        width: 100%;
-    }
-}*/
+
 
 nav ul{
     background-color: #0E223D;

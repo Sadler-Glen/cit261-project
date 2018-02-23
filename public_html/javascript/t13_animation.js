@@ -4,7 +4,11 @@ function animateIt(){
     document.getElementById("myHeading").classList.toggle("myHeading");
     document.getElementById("myContent").classList.toggle("myContent");
     document.getElementById("btn20").classList.toggle("btn20");
-} 
+}
+
+function animateDisk(){
+    document.getElementById("myDisk").classList.toggle("disk");
+}
 
 // Animation with circle using keyframes
 // Trigger circle animation by adding the circle.style.animation
