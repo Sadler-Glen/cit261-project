@@ -14,3 +14,15 @@ function startTransform() {
     }
     return el;
 }
+
+function rotate3d(){
+    var el = document.querySelector("div.child2");
+
+    if (el) {
+        el.className = "child";
+    } else {
+        el = document.querySelector("div.child");
+        el.className = "child2";
+    }
+    return el;
+}

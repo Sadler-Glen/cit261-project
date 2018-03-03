@@ -48,7 +48,7 @@
         <main role="main" id="main">
             <h2>Topic 13: Designing, Defining, and Triggering CSS3 Animations without Custom Libraries (Thought Library).</h2>
             <hr>
-            <div class="shake">
+            <div>
                 <h2>Animations using CSS and @keyframes</h2>
             </div>
             <p></p>
@@ -60,7 +60,7 @@
                 however, used javascript function to run this using a <code style="color:green">onclick</code> 
                 HTML5 event to trigger this, which probably would not be the way this 
                 would be done in the real world but will suffice for this demonstration.
-             
+
             </p>
             <div id="myButton1">
                 <a onclick="animateIt()" id="btn21" class="btn21" href="#">Toggle Animation</a>
@@ -93,6 +93,8 @@
             </p>
             <h3 id='animate2_ex'>Animation Example 2</h3>
             <p></p>
+            <p></p>
+            <p></p>
             <div id="parent">
                 <div id="circle" class="circle"></div>
                 <p class="dummy" style="height: 200px;"></p>
@@ -112,20 +114,27 @@
                 <a onclick="animateDisk()" id="btn22" class="btn22" href="#animate3_ex">Toggle Animation</a>
             </div>
             <p></p>
-            <div>
-                <div id="myDisk" class="disk"></div>
-            </div>    
-                <p id='script'>
-                    <script src="https://gist.github.com/Sadler-Glen/25ba23188b1bee2f751e92e2374575ae.js"></script>
-                </p>
+            <div id="myDisk1" class="disk2">
+                <div id="myDisk" class=""></div>
+            </div>
+            <p>
+                <script src="https://gist.github.com/Sadler-Glen/731ac86353b6029b0a313087017714ef.js"></script>
+            </p>
+            <p id='script'>
+                <script src="https://gist.github.com/Sadler-Glen/25ba23188b1bee2f751e92e2374575ae.js"></script>
+            </p>
             <h3 id='animate4_ex'>Animation Example 4</h3>
             <p>
-                I was able to grab a sprite sheet with 8 graphics on the sheet. 
-                the original sheet was 600px x 128px. I was able to enlarge it in
+                I was able to grab a sprite sheet with 8 graphics on the sheet (See 
+                the image Below. The original sheet was 600px x 128px. I was able to enlarge it in
                 Photoshop to 960px x 211px. Each graphic was then 120px x 211px. 
                 This size of each sprite was required to ensure that the stylesheet 
                 was coded correctly. See the style sheet code below.
             </p>
+            <figure>
+                <img width = "450px" height= "96px" src="../content/images/capguy-walk.png" alt="Man Walking">
+                <figcaption>Fig1. Cap Guy Sprite Sheet</figcaption>
+            </figure>
             <div id="capGuy" class="capGuy"></div>
             <p></p>
             <button id="startWalk" onclick="startWalk();">Start</button>            
@@ -136,6 +145,7 @@
             <p>
                 <script src="https://gist.github.com/Sadler-Glen/c3cec4dc7faa3fa2c066a544aa581d2f.js"></script>
             </p>
+            
         </main>
         <footer role="contentinfo">
             <br/>

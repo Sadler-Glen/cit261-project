@@ -8,11 +8,14 @@ function animateIt(){
 
 function animateDisk(){
     document.getElementById("myDisk").classList.toggle("disk");
+    document.getElementById("myDisk1").classList.toggle("disk2");
+
 }
 
 // Animation with circle using keyframes
 // Trigger circle animation by adding the circle.style.animation
 // to the circle div
+
 function startMove() {
     circle.style.animation = "animate_01 2.5s infinite ease normal";
 //    circle.style.animation = "";
@@ -26,8 +29,9 @@ function stopMove() {
 // Animation with walking sprite
 // Trigger sprite animation by adding the capGuy.style.animation
 // to the capGuy div
+
 function startWalk() {
-    capGuy.style.animation = "walk-east 0.7s steps(8) infinite";
+    capGuy.style.animation = "walk-east 1.5s steps(8) infinite";
 };
 // stop animation by setting animation to ""
 function stopWalk() {
