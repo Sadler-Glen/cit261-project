@@ -36,7 +36,7 @@ function showData(lat, lon){
     // if(city != ''){
         var dataRequest = new XMLHttpRequest();
         // Setup to receive data from the URL
-        var myAddress = 'http://api.openweathermap.org/data/2.5/weather?lat='+ lat + '&lon='+lon+'&type='+ type +'&units='+units+'&appid='+ api_id +'';
+        var myAddress = 'https://api.openweathermap.org/data/2.5/weather?lat='+ lat + '&lon='+lon+'&type='+ type +'&units='+units+'&appid='+ api_id +'';
         // var myAddress = 'http://api.openweathermap.org/data/2.5/weather?q='+ city +
         //                 '&type=accurate&units=metric&appid='+ api_id +'';
         dataRequest.open('GET', myAddress);
@@ -87,7 +87,7 @@ btn.addEventListener("click", function () {
     if(city != ''){
         var dataRequest = new XMLHttpRequest();
         // Setup to receive data from the URL
-        var myAddress = 'http://api.openweathermap.org/data/2.5/weather?q='+ city +'&units=metric&appid=e10b98b0f39c7d3653ea2d4b88af4ddd'
+        var myAddress = 'https://api.openweathermap.org/data/2.5/weather?q='+ city +'&units=metric&appid=e10b98b0f39c7d3653ea2d4b88af4ddd'
         dataRequest.open('GET', myAddress);
         dataRequest.onload = function () {            
             // if (dataRequest.status >= 200 && dataRequest.status < 400) 
