@@ -176,6 +176,9 @@ function writeData(data) {
         case "overcast clouds":
             document.getElementById("body").style.backgroundImage = "url('./content/img/cloudy.png')";
             break;
+        case "broken clouds":
+            document.getElementById("body").style.backgroundImage = "url('./content/img/cloudy.png')";
+            break;            
         case "shower rain":
             document.getElementById("body").style.backgroundImage = "url('./content/img/rain.png')";    
             break;
