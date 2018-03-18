@@ -211,7 +211,7 @@ function writeData(data) {
 
     htmlString = "Current Weather for <h1>" + data.name + ", " + data.sys.country + "</h1><br />" +
             "Weather: &#09;" + data.weather[0].main + "<br />" +
-            "Description: <h1><img src='http://openweathermap.org/img/w/" + icon +".png'>" + description + "</h1><br />" +
+            "Description: <h1><img src='https://openweathermap.org/img/w/" + icon +".png'>" + description + "</h1><br />" +
             "Temperature: <h1>" + temp + "&degC" + "</h1><br />" +
             "Pressure: " + pressure + "hPa" + "<br />" +
             "Humidity: " + data.humidity +"%" + "<br/>" +
