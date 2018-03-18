@@ -1,0 +1,443 @@
+/* Import fonts */
+@import 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab';
+/* for ease these can be copied and pasted into the stylesheet*/
+/*font-family: 'Roboto Slab', serif;
+font-family: 'Open Sans', sans-serif;*/
+/* Change the box model to border box on all elements */
+
+/* {
+    box-sizing: border-box;
+} */
+/* Set the height and width to html and body to 100% */
+html,body{
+    height: 100%;
+    width: 100%;
+}
+/* Set general rules for body */
+body{
+    /*    font-family: 'Roboto Slab', serif;
+        font-family: 'Open Sans', sans-serif;*/
+
+    font-family: Trebuchet MS, sans-serif;
+    /*font-size: 20px;*/
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    color: #0E223D;
+    font-weight: 700;
+}
+body{
+    background-color: #E0F9F4;
+    background-image: url("../content/img/bg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    /* overflow: hidden; */
+    /* background: url(../content/img/rain.png) repeat; */
+    animation: animate-background linear 120s infinite;
+}
+
+@keyframes animate-background{
+    from {
+        background-position: 0px;
+    }
+    to {
+        background-position: 1080px;
+    }
+} 
+
+html, body, nav, ul, li, a, span{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Set background of main transparent*/
+main[role] {
+    background-color: rgba(255,255,255,.5);
+    /* height: 400px;     */
+}
+
+header[role], nav[role]{
+    width: 70%;
+    background-color:#0E223D;
+    padding: 0;
+    margin: 0 auto;
+    box-shadow: 0 0 10px black;
+}
+
+header[role]{
+    height: 60px;
+}
+
+/* Search Input box in header */
+input[type=text] {
+    width: 30%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    background-image: url('../content/img/icons8-search-25.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 10px 20px 10px 35px;
+    margin: 5px 1%;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 50%;
+}
+
+#btn{
+    background-color: rgb(255, 255, 255,.8);
+    border: 2px solid rgb(204, 204, 204,.8);
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 5px 15px;    
+    margin: 5px 1%;
+    cursor: pointer;
+}
+
+/* Wunderground logo styling in header */
+.logo{
+    float: left;
+    margin-top: auto;
+}
+
+
+/* hamburger styling in header */
+.hamburger{
+    float: right;
+    margin: 15px 10px;
+    display: block;
+    /* margin-right: 10px; */
+}
+
+/* .nohamburger{
+    float: right;
+    margin: 15px 10px;
+    display: none;
+} */
+
+/* Close icon styling in header*/
+/* .close{
+    float: right;
+    margin: 15px 10px;
+    display: block;
+}
+
+.noclose{
+    float: right;
+    margin: 15px 10px;
+    display: none;
+} */
+
+
+
+/* nav{
+    width: 71.25%;
+    margin: auto;
+} */
+main[role], footer[role], nav[role], header[role]{
+    width: 90%;
+    margin: 0 auto;
+/*    margin-left: auto;
+    margin-right: auto;*/
+
+}
+
+main[role]{
+    box-shadow: 0 0 10px black;
+    top: 600px;
+}
+
+main[role], nav[role], footer[role], header[role] {
+    margin: 1.25rem auto;
+    padding: .5rem;
+    max-width:900px;
+}
+
+/* nav[role]{
+    position: fixed;
+    top: 100px;
+    margin: auto;
+} */
+
+/* Remove default list marker, margin and padding from these lists */
+ul,ol{
+    list-style: none;
+}
+
+/* remove text decoration for all anchors */
+a {
+    text-decoration: none;
+}
+
+
+
+/* footer {
+    margin: 1.25rem auto;
+} */
+.gist {
+    width:100% !important;
+}
+.gist-file
+.gist-data {
+    max-height: 500px;
+    max-width: 100%;
+}
+
+/* pre{
+    font-size: 12pt;
+    max-width: 100%;
+    max-height: 500px;
+    background-color: #f4f2f2;
+    overflow-x: auto;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 20px 5px 20px;
+    border: solid 1px #dce6f0;
+    border-radius: 0.3rem;
+}
+
+code {
+   
+    font-size: 12pt;
+    font-family: courier new;
+    color:goldenrod;
+    width: 65%;
+} */
+
+
+/* From this point we control element sizes and layout for screen display */
+h1,h2,h3,h4{
+    /*font-size: 8vw;  Roughly 8% of the screen width*/ 
+    font-family: 'Roboto Slab', serif;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+
+.hide-btn {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(.75);
+}
+
+/* .hide {
+    display: none;
+} */
+
+
+.unhide{
+    display: block;   
+}
+
+nav ul{
+    background-color: #0E223D;
+    display: flex;
+    flex-direction: column;
+    transition: 5s ease-in-out;
+}
+
+nav ul li{
+    list-style-type: none;
+}
+
+nav ul li a{
+    padding: .8rem 1rem;
+    display: block;
+    text-decoration: none;
+    color: #f9f9f9;
+}
+
+nav ul li:hover{
+    background:rgba(13,112,219,.25);
+}
+
+nav ul li:hover ul{
+    display:flex;
+    flex-direction: column;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.weather, .other, .about{
+    width: 90%;
+    margin: auto;
+    min-height: 400px;
+}
+
+
+/* .closeBtn{
+    display: none;
+} */
+
+/* .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+} */
+
+/* .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+} */
+
+/* .rain{
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    overflow: hidden;
+    background: url(../content/img/rain.png) repeat;
+    animation: animate-background linear 15s infinite;
+} */
+
+@keyframes animate-background{
+    from {
+        background-position: 0px;
+    }
+    to {
+        background-position: -720px;
+    }
+}
+
+
+@media only screen and (max-width:768px){
+    .has-children ul li a{
+        padding: 2rem;
+    }
+    .nomenu{
+        animation: animate-a 1s forwards;
+        display: none;
+    }
+    .menu{
+        animation: animate 1s forwards;
+        display: block;
+    }
+    @keyframes animate{
+        0%{
+            opacity: 0;
+            transform: translateX(-200px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+            box-shadow: 0 0 10px black;
+        }
+    }
+
+    @keyframes animate-a{
+        0%, 25%, 50%, 75%{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+        100%{
+            opacity: 0;
+            transform: translateX(1000px);
+        }
+    }
+
+    .nomenu ul li:first-child a{
+        animation-delay: 0;
+    }
+
+    .nomenu ul li:nth-child(2) a{
+        animation-delay: 0.5;
+    }
+
+    .nomenu ul li:last-child a{
+        animation-delay: 1s;
+    }
+
+    .hamburger{
+        animation: load 1s forwards;
+        display: block;
+    }
+
+    @keyframes load{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    
+    .hamburger{
+        display: block;
+
+    }
+
+}
+
+@media only screen and (min-width:768px){
+    
+    nav ul{
+        flex-grow: 1;
+        flex-direction:row;
+        justify-content: space-around;
+    }
+    
+    nav ul li {
+        position: relative;
+        flex: 1 0 auto;
+        text-align: left;   
+    }
+
+    
+    nav ul li:hover ul{
+        display:flex;
+        flex-direction: column;
+    }
+
+} 
+
+#img {
+    align-content: center;
+}
+
+footer[role] {
+    min-height: 80px;
+}
+
+/* style footer anchors */
+
+footer[role] span {
+    color: #FFF;
+    font-weight: bold;
+}
+
+footer[role]{
+    font-size: .85em; /* 12.8px */
+    background-color: #0E223D;
+    margin-top: 10px;
+    margin-bottom:40px;
+    max-height: 100px;
+    box-shadow: 0 0 10px black;
+}
+
+footer[role] p {
+    text-align: center;
+    color: #FFF;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen">
+    <!-- <script type="text/javascript" src="js/weather.js"></script> -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script> 
+    <link rel="shortcut icon" href="#"/>
+    <title>Weather App</title>
+</head>
+<body id="body" onload="getLocation()" >
+    <header role="banner" id="page-header">     
+        <form>
+            <i><img class="logo" id="logo" src="content/img/wundergroundLogo_4c_rev-3.png"></i>
+            <!-- <input id="searchPlace" type="text" name="search" placeholder="Search Location.."> -->
+            <!-- <center><input id='city' type="text" name = "find" placeholder = "Enter Location.."><button id="btn">Display Weather</button> -->
+                <a><i><img onclick=toggleNav(); class="hamburger" id="hamburger" src="content/img/icons8-hamburger-25.png"></i></a>
+            </form>                        
+        </header>
+        <nav role="navigation" id="nav" class="menu">
+            <ul>
+                <li id="first"><a href="#page-header">Home</a></li>
+                <li id="second"><a href="#other">Other Data</a></li>
+                <li id="third" ><a href="#about">About</a></li>
+            </ul>
+        </nav>
+        <main id="main" role="main">
+            <!-- <div id="rain" class="rain" ></div> -->
+            <h2 ><center>Weather Project App</center></h2>
+            <center><p id="location" ></p></center>  
+            <hr>
+            <center><div id="alert" class="alert"></div></center>
+            <!-- <div id="alert" class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+            </div> -->
+            <center><input id='city' type="text" name = "find" placeholder = "City..."><button id="btn" class="button">Display</button></center>
+            
+            <center><div id="weather" class="weather" ></div></center>                
+                <p></p>
+                <hr>
+                <div id="other" class="other">
+                    <center><h2>Other Data</h2></center>
+                    <center><div id="otherData"></div></center>
+                </div>
+                <hr>
+                <div id="about" class="about" >       
+                    <center><h2>About</h2></center>
+                        <span>
+                            <p>
+                                This APP has been created as part of a personal project for a BYU Idaho paper for Computer
+                                Information Techology, viz., CIT-261- JavaScript Mobile Software Development.
+                            </p>
+                            <p>
+                                This course has been designed to allow us to become more professional by learning in an environment 
+                                where the instructor is our mentor rather than a lecturer. Using HTML5, CSS3, and JavaScript 
+                                we learned to explore technologies in order to resolve problems that arise naturally. 
+                                You also learned to find, evaluate, and select solutions to those same problems through 
+                                creating this single page mobile web application. Having had such a mentored learning experience 
+                                is very important when we begin your career. Exploration of tech to solve previously unsolved 
+                                problems is what we will be doing for your job.
+                            </p>
+                            <p>    
+                                We worked in a group but we were responsible for our own learning. This was accomplished when 
+                                our learning, not the team's was evaluated. To accomplish this, assessment points were created 
+                                in the course. These consist of providing evidence of our fluency in the technologies in the form 
+                                of sandbox code, and code we, not our team, have written. Additional evidence of professionalism 
+                                is also a requirement. We came to see what these were and how our fluency and professionalism was 
+                                be assessed by viewing the course rubric.
+                            </p>
+                        </span>
+                </div>
+            </main>
+            <footer role="contentinfo">
+                <script type="text/javascript" src="js/weather.js"></script> <br/>
+                <p><span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span></p>
+            </footer>
+            <!-- Script for the googlemap API -->
+            <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcoYPIAqPMwB-5HjYM1817_opsitjKNZc&libraries=places&callback=activatePlacesSearch"></script> -->
+        </body>
+        </html>
