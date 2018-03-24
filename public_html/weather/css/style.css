@@ -57,13 +57,13 @@ html, body, nav, ul, li, a, span{
 
 /* Set background of main transparent*/
 main[role] {
-    background-color: rgba(255,255,255,.5);
+    background-color: rgba(255,255,255,.3);
     /* height: 400px;     */
 }
 
 header[role], nav[role]{
     width: 70%;
-    background-color:#0E223D;
+    background-color:rgb(14, 34, 61, .3);
     padding: 0;
     margin: 0 auto;
     box-shadow: 0 0 10px black;
@@ -73,14 +73,14 @@ header[role]{
     height: 60px;
 }
 
-/* Search Input box in header */
+/* Search Input box */
 input[type=text] {
-    width: 30%;
+    width: 200px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
+    border: 1px solid rgb(204, 204, 204);
     border-radius: 4px;
     font-size: 14px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     background-image: url('../content/img/icons8-search-25.png');
     background-position: 10px 10px; 
     background-repeat: no-repeat;
@@ -140,10 +140,7 @@ input[type=text]:focus {
 
 
 
-/* nav{
-    width: 71.25%;
-    margin: auto;
-} */
+
 main[role], footer[role], nav[role], header[role]{
     width: 90%;
     margin: 0 auto;
@@ -163,11 +160,6 @@ main[role], nav[role], footer[role], header[role] {
     max-width:900px;
 }
 
-/* nav[role]{
-    position: fixed;
-    top: 100px;
-    margin: auto;
-} */
 
 /* Remove default list marker, margin and padding from these lists */
 ul,ol{
@@ -179,39 +171,6 @@ a {
     text-decoration: none;
 }
 
-
-
-/* footer {
-    margin: 1.25rem auto;
-} */
-.gist {
-    width:100% !important;
-}
-.gist-file
-.gist-data {
-    max-height: 500px;
-    max-width: 100%;
-}
-
-/* pre{
-    font-size: 12pt;
-    max-width: 100%;
-    max-height: 500px;
-    background-color: #f4f2f2;
-    overflow-x: auto;
-    padding: 5px 5px 5px 5px;
-    margin: 5px 20px 5px 20px;
-    border: solid 1px #dce6f0;
-    border-radius: 0.3rem;
-}
-
-code {
-   
-    font-size: 12pt;
-    font-family: courier new;
-    color:goldenrod;
-    width: 65%;
-} */
 
 
 /* From this point we control element sizes and layout for screen display */
@@ -239,7 +198,7 @@ h1,h2,h3,h4{
 }
 
 nav ul{
-    background-color: #0E223D;
+    background-color: rgb(14, 34, 61, .7);
     display: flex;
     flex-direction: column;
     transition: 5s ease-in-out;
@@ -267,6 +226,15 @@ nav ul li:hover ul{
     cursor: pointer;
 }
 
+.logo{
+    display: block;
+    transform: scale(1.5);
+}
+
+.logotxt{
+    color: #92c6f7;
+}
+
 .hamburger{
     display: none;
     cursor: pointer;
@@ -278,6 +246,307 @@ nav ul li:hover ul{
     min-height: 400px;
 }
 
+/* simple app css start */
+
+.info_bg p {
+    margin-bottom: -.2em;
+
+  }
+  
+  .climate_bg {
+    position: absolute;
+    top: 0;
+    left: 54.73%;
+    z-index: 6;
+    width: 118px;
+    height: 100px;
+    border-top-right-radius: 10px;
+    background-color: rgb(255, 255, 255);
+  }
+
+  
+  
+  .myweathericon {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 70%;
+    z-index: 10;
+    width: 40px;
+    height: auto;
+    transform: scale(2);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  #wdescription{
+      position: absolute;
+      top: 55px;
+      width: 116px;
+      margin: 0 auto;
+      left: 55%;
+      text-align: center;
+      color: rgb(6, 22, 54);
+      z-index: 6;
+
+  }
+  
+  .container {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    width: 260px;
+    height: 180px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+  }
+  
+  .dropicon {
+    display: block;
+    position: absolute;
+    top: 19px;
+    left: -13px;
+    z-index: 3;
+    width: 40px;
+    height: auto;
+    overflow: hidden;
+    transform: scale(.7);
+  }
+  
+  .not-available, .failed {
+    position: absolute;
+    top: 464px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    width: 248px;
+    min-height: 24px;
+    margin: 0 auto;
+    font: 0.625em/1.38 'Trebuchet MS';
+    color: rgb(0, 0, 0);
+  }
+  
+  .humidity {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    z-index: 2;
+    width: 46px;
+    min-height: 29px;
+    font-size: 1em;
+    line-height: 1;
+    text-align: left;
+    color: #ffffff;
+  }
+  
+  .info_bg {
+    position: absolute;
+    top: 100.7px;
+    left: 142px;
+    z-index: 4;
+    width: 118px;
+    height: 79.89px;
+    border-bottom-right-radius: 10px;
+    /* background-color: #1ab1ed; */
+    background-color: rgb(88, 159, 240);
+  }
+  
+  .location {
+    position: absolute;
+    top: 105px;
+    left: 0px;
+    z-index: 8;
+    width: 142px;
+    min-height: 39px;
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 2;
+    margin: 0%;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+  }
+  
+  .temperature {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    padding: 0px auto;
+    z-index: 7;
+    width: 142px;
+    margin: auto;
+    min-height: 28px;
+    font-size: 3.5em;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+
+  #tempunit{
+    position: absolute;
+    top: 55px;
+    width: 142px;
+    left: 100px;
+    font-size: 3em;
+      line-height: 1;
+      margin: 0 auto;
+    color: #ffffff;   
+}
+
+  .hitemp{
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 142px;
+      text-align: center;
+      color: #ffffff;
+  }
+
+.favorite{
+    position: absolute;
+    top: 40px;
+    left: -85px;
+}
+
+  
+  .windicon {
+    display: block;
+    position: absolute;
+    top: 14px;
+    left: 33.5555%;
+    z-index: 1;
+    width: 50px;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .windspeed {
+    position: absolute;
+    top: 5px;
+    left: 72px;
+    width: 50px;
+    min-height: 29px;
+    font-size: 1em;
+    line-height: 1.38;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .winddirection{
+      position: absolute;
+      top: 50px;
+      left: 80Px;
+      color: #ffffff;
+  }
+
+  /* Container of sunrise,sunset, pressure icons */
+
+.container2{
+    position: relative;
+    top: 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    width: 260px;
+    height: 180px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: rgb(88, 159, 240);
+    box-shadow: 0 20px 50px rgba(5, 57, 116, 0.8);
+    opacity: 0.8;
+}
+
+/*sunrise icon*/
+
+.sunup{
+    position: absolute;
+    left: 50%;
+    top: -35px;
+    z-index: 2000;
+    margin: 0 auto;
+    padding: 0 0;
+    width: 100%;
+    line-height: 3;
+    text-align: center;
+}
+
+/*sunset icon*/
+.sundown{
+    position: absolute;
+    left: 50%;
+    top: 15px;
+    margin: 0 auto;
+    padding: 0 0;
+    width: 100%;
+    line-height: 3;
+    text-align: center;
+}
+
+/* sunset and sunrise txt container  */
+.sun {
+    position: absolute;
+    top: 0;
+    left: 54.73%;
+    z-index: 6;
+    width: 118px;
+    height: 180px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(255, 255, 255);
+  }
+
+  /* sunrise text */
+  .srise{
+      position: absolute;
+      top: 30px;
+      padding: 0 0;
+      margin: 0 auto;
+      width: 118px;
+      text-align: center;
+  }
+
+  /* sunset text */
+  .sset{
+    position: absolute;
+    top: 82px;
+    padding: 0 0;
+    margin: 0 auto;
+    width: 118px;
+    text-align: center;
+  }
+
+  /* weather pressure icon */
+  .wpress{
+    position: absolute;
+    top: 75px;
+    left:129px;
+    padding: 0 0;
+    margin: 0 auto;
+    width: 118px;
+    text-align: center;
+  }
+/* weather pressure text */
+  .pressure{
+    position: absolute;
+    top: 53px;
+    left: 12.5px;
+    padding: 0 0;
+    margin: 0 auto;
+    z-index: 10;
+    width: 118px;
+    height: 19px;
+    text-align: center;
+  }
+  
+/* simple app styles end */
 
 /* .closeBtn{
     display: none;
@@ -327,7 +596,7 @@ nav ul li:hover ul{
     .has-children ul li a{
         padding: 2rem;
     }
-    .nomenu{
+     .nomenu{
         animation: animate-a 1s forwards;
         display: none;
     }
@@ -358,7 +627,7 @@ nav ul li:hover ul{
         }
     }
 
-    .nomenu ul li:first-child a{
+    /* .nomenu ul li:first-child a{
         animation-delay: 0;
     }
 
@@ -371,9 +640,9 @@ nav ul li:hover ul{
     }
 
     .hamburger{
-        animation: load 1s forwards;
+        animation: load 3s forwards;
         display: block;
-    }
+    } */
 
     @keyframes load{
         0%{
@@ -430,7 +699,7 @@ footer[role] span {
 
 footer[role]{
     font-size: .85em; /* 12.8px */
-    background-color: #0E223D;
+    background-color: rgb(14, 34, 61, .9);
     margin-top: 10px;
     margin-bottom:40px;
     max-height: 100px;
