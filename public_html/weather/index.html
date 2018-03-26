@@ -11,152 +11,170 @@
     <title>Weather App</title>
 </head>
 
-<body id="body" onload="getLocation()">
+<body id="body" onload="getLocation(); fadeIn();">
+    <!-- <div class="rain"></div> -->
     <header role="banner" id="page-header">
         <form>
             <i>
                 <img class="logo" id="logo" src="content/img/icons/01d.png">
             </i>
-            <!-- <input id="searchPlace" type="text" name="search" placeholder="Search Location.."> -->
-            <!-- <center><input id='city' type="text" name = "find" placeholder = "Enter Location.."><button id="btn">Display Weather</button> -->
-            <a>
-                <i>
-                    <img onclick=toggleNav(); class="hamburger" id="hamburger" src="content/img/icons8-hamburger-25.png">
-                </i>
-            </a>
-        </form>
-        <p class="logotxt">Open Weather</p>
-    </header>
-    <nav role="navigation" id="nav" class="menu">
-        <ul>
-            <li id="first">
-                <a href="#page-header">Home</a>
-            </li>
-            <li id="second">
-                <a href="#other">Other Data</a>
-            </li>
-            <li id="third">
-                <a href="#about">About</a>
-            </li>
-        </ul>
-    </nav>
-    <main id="main" role="main">
-        <!-- <div id="rain" class="rain" ></div> -->
-        <h2>
-            <center>Weather App Project</center>
-        </h2>
-        <center>
-            <p id="location"></p>
-        </center>
-        <hr>
-        <center>
-            <div id="alert" class="alert"></div>
-        </center>
-        <!-- <div id="alert" class="alert">
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
-            </div> -->
-        <center>
-            <input id='city' type="text" name="find" placeholder="City...">
-            <button id="btn" class="button">Display</button>
-        </center>
-        <div class="container clearfix">
-            <p id="mycity" class="location"></p>
-            <p id="temperature" class="temperature"></p>
-            <p id="hilotemp" class="hitemp"></p>
-            <p id="tempunit" class="unit"></p>
-            <div id="climate_bg" class="climate_bg"></div>
-            <p id="wicon" class="weathericon"></p>
-            <p id="wdescription" class "wdescription"></p>
-            <div id="info_bg" class="info_bg">
-                <img class="dropicon" src="content/img/Droplet.svg">
-                <p id="humidity" class="humidity"></p>
-                <img class="windicon" src="content/img/Wind.svg">
-                <div id="windspeed" class="windspeed">kp/h</div>
-                <div id="direction" class="winddirection"></div>
-                <i>
-                    <img class="favorite" id="fav" src="content/img/icons/yellow-fav.png">
-                </i>
-            </div>
+            <i>
+                <img onclick=toggleNav(); class="hamburger" id="hamburger" src="content/img/icons8-hamburger-25.png">
+            </i>
+        </a>
+    </form>
+    <p class="logotxt">Open Weather</p>
+</header>
+<nav role="navigation" id="nav" class="menu">
+    <ul>
+        <li id="first">
+            <a href="#page-header">Home</a>
+        </li>
+        <li id="second">
+            <a href="#fiveDay">5 Day Forecast</a>
+        </li>
+        <li id="third">
+            <a href="#about">About</a>
+        </li>
+    </ul>
+</nav>
+<main id="main" role="main">
+    <div id="gpscoords" class ="gpscoords" ></div>
+    <center>
+        <div id="alert" class="alert"></div>
+    </center>
+    <!-- <div id="alert" class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+    </div> -->
+    <center>
+        <input id='city' type="text" name="find" placeholder="City...">
+        <button id="btn" class="button">Display</button>
+    </center>
+    <div id="currentWeather" class="currentWeather">
+    <div id = "cont1" class="container clearfix">
+        <p id="mycity" class="location"></p>
+        <p id="temperature" class="temperature"></p>
+        <p id="hilotemp" class="hitemp"></p>
+        <p id="tempunit" class="unit"></p>
+        <div id="climate_bg" class="climate_bg"></div>
+        <p id="wicon" class="weathericon"></p>
+        <p id="wdescription" class "wdescription"></p>
+        <div id="info_bg" class="info_bg">
+            <img class="dropicon" src="content/img/Droplet.svg">
+            <p id="humidity" class="humidity"></p>
+            <img class="windicon" src="content/img/Wind.svg">
+            <div id="windspeed" class="windspeed">kp/h</div>
+            <div id="direction" class="winddirection"></div>
+            <i><img class="favorite" id="fav" src="content/img/icons/yellow-fav.png"></i>
         </div>
-        <div class="container2">
+    </div>
+    <div id = "cont2" class="container2">
+        <div id="sunrise" class="sunup">
+            <i><img class="favorite" id="fav" src="content/img/icons/sunrise-50.png"></i>
+        </div>
+        <div id="sunset" class="sundown">
+            <i><img class="favorite" id="fav" src="content/img/icons/sunset-50.png"></i>
+        </div>
+        <div id="press" class="wpress">
+            <i><img class="favorite" id="fav" src="content/img/icons/pressure-50.png"></i>
+            <p id="apressure" class="pressure"></p>
+        </div>
+        <div class="sun">
+            <p id="srise" class="srise"></p>
+            <p id="sset" class="sset"></p>
+        </div>
+    </div>
+    </div>
+    <center>
+        <div id="weather" class="weather"></div>
+    </center>
+    <p></p>
+    <hr>
+    <div id="fiveDay" class="fiveDay">
+        <center>
+            <h2>5 Day Forecast</h2><br />
+        </center>
+    </div>
+    <!-- <div id="fiveDayForecast" class="fiveDayForecast">    
+    <div id="flexcontainer1" class="flex_container1">
+        <div id="day1_wicon" class= "day1_wicon">1W</div>                
+        <div id="day2_wicon" class= "day2_wicon">2W</div>
+        <div id="day3_wicon" class= "day3_wicon">3W</div>
+        <div id="day4_wicon" class= "day4_wicon">4W</div>
+        <div id="day5_wicon" class= "day5_wicon">5W</div>
+    </div>
+    <div id="flexcontainer2" class="flex_container2">
+        <div id="day1_date" class= "day1_date">1D</div>
+        <div id="day2_date" class= "day2_date">2D</div>
+        <div id="day3_date" class= "day3_date">3D</div>
+        <div id="day4_date" class= "day4_date">4D</div>
+        <div id="day5_date" class= "day5_date">5D</div>
+    </div>
+    </div> -->
+</div>
+<div>
+    <table id= "mytable" class="mytable">
+        <thead>
+            <tr>
+                <th></th>
+                <th align="left">Weather</th>                   
+                <th>Min. Temp</th>
+                <th>Max. Temp</th>
+                <!-- <th>Pressure</th>
+                <th>Humidity</th>
+                <th>Wind Speed</th>
+                <th>Wind Direction</th> -->
+            </tr>
+        </thead>
 
-            <div id="sunrise" class="sunup">
-                <i>
-                    <img class="favorite" id="fav" src="content/img/icons/sunrise-50.png">
-                </i>
-            </div>
-            <div id="sunset" class="sundown">
-                <i>
-                    <img class="favorite" id="fav" src="content/img/icons/sunset-50.png">
-                </i>
-            </div>
-            <div id="press" class="wpress">
-                <i>
-                    <img class="favorite" id="fav" src="content/img/icons/pressure-50.png">
-                </i>
-                <p id="apressure" class="pressure"></p>
-            </div>
-            <div class="sun">
-                <p id="srise" class="srise"></p>
-                <p id="sset" class="sset"></p>
-            </div>
-        </div>
-        <center>
-            <div id="weather" class="weather"></div>
-        </center>
-        <p></p>
-        <hr>
-        <div id="other" class="other">
-            <center>
-                <h2>Other Data</h2>
-            </center>
-            <center>
-                <div id="otherData"></div>
-            </center>
-        </div>
-        <hr>
-        <div id="about" class="about">
-            <center>
-                <h2>About</h2>
-            </center>
-            <span>
-                <p>
-                    This single paged APP has been created as part of a personal project for CIT-261: JavaScript Mobile Software Development.
-                </p>
-                <p>
-                    This course has been designed to allow us to become more professional by learning in an environment where the instructor
-                    is our mentor rather than a lecturer. Using HTML5, CSS3, and JavaScript we learned to explore technologies
-                    in order to resolve problems that would arise naturally. We also learned to find, evaluate, and select
-                    solutions to those same problems through creating this single page mobile web application. Having had
-                    such a mentored learning experience is very important as we begin our careers. Exploration of tech to
-                    solve previously unsolved problems is what we will be doing for our job.
-                </p>
-                <p>
-                    We worked in a group but we were responsible for our own learning. This was accomplished when our learning, not the team's,
-                    was evaluated. To accomplish this, assessment points were created in the course. These consisted of providing
-                    evidence of our fluency in the technologies in the form of sandbox code, and code we, not our team, have
-                    written. Additional evidence of professionalism is also a requirement. We came to see what these were
-                    and how our fluency and professionalism was to be assessed by viewing the course rubric.
-                </p>
-            </span>
-        </div>
-    </main>
-    <footer role="contentinfo">
+        <tbody id="forecastWeather">
+
+        </tbody>
+    </table>
+</div>
+<hr>
+<div id="about" class="about">
+    <center>
+        <h2>About</h2>
+    </center>
+    <span>
         <p>
-            <span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span>
+            This single paged APP has been created as part of a personal project for CIT-261: JavaScript Mobile Software Development.
         </p>
-    </footer>
-    <script type="text/javascript" src="js/weather.js"></script>
-    <br/>
-    <script>
-        function activatePlacesSearch() {
-            var input = document.getElementById('city');
-            var autocomplete = new google.maps.places.Autocomplete(input);
-        }
-    </script>
-    <!-- Script for the googlemap API -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcoYPIAqPMwB-5HjYM1817_opsitjKNZc&libraries=places&callback=activatePlacesSearch"></script>
+        <p>
+            This course has been designed to allow us to become more professional by learning in an environment where the instructor
+            is our mentor rather than a lecturer. Using HTML5, CSS3, and JavaScript we learned to explore technologies
+            in order to resolve problems that would arise naturally. We also learned to find, evaluate, and select
+            solutions to those same problems through creating this single page mobile web application. Having had
+            such a mentored learning experience is very important as we begin our careers. Exploration of tech to
+            solve previously unsolved problems is what we will be doing for our job.
+        </p>
+        <p>
+            We worked in a group but we were responsible for our own learning. This was accomplished when our learning, not the team's,
+            was evaluated. To accomplish this, assessment points were created in the course. These consisted of providing
+            evidence of our fluency in the technologies in the form of sandbox code, and code we, not our team, have
+            written. Additional evidence of professionalism is also a requirement. We came to see what these were
+            and how our fluency and professionalism was to be assessed by viewing the course rubric.
+        </p>
+    </span>
+</div>
+</main>
+<footer role="contentinfo">
+    <p>
+        <span>Glen Sadler | CIT261 - BYUI | &copy; Copyright 2018</span>
+    </p>
+</footer>
+<script type="text/javascript" src="js/weather.js"></script>
+<br/>
+<script>
+    function activatePlacesSearch() {
+        var input = document.getElementById('city');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+    }
+</script>
+<!-- Script for the googlemap API -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcoYPIAqPMwB-5HjYM1817_opsitjKNZc&libraries=places&callback=activatePlacesSearch"></script>
 </body>
 
 </html>

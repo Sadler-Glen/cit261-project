@@ -30,7 +30,7 @@ function showData(lat, lon) {
 	var dataRequest = new XMLHttpRequest();
 	// Setup to receive data from the URL
 	var myAddress =
-	"https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" +  lon +
+	"http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" +  lon +
 	"&type=" + type + "&units=" + units + "&appid=" + api_id;
 	dataRequest.open("GET", myAddress, true);
 	dataRequest.onload = function() {
@@ -49,7 +49,7 @@ function showData(lat, lon) {
 	var forecastRequest = new XMLHttpRequest();
 	// Setup to receive data from the URL
 	var myForecast =
-	"https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" +  lon +
+	"http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" +  lon +
 	"&type=" + type + "&units=" + units + "&appid=" + api_id;
 	forecastRequest.open("GET", myForecast, true);
 	forecastRequest.onload = function() {
@@ -74,14 +74,13 @@ btn.addEventListener("click", function() {
 	// create a new variable and set a new
 	// instance of XMLHttpRequest
 	document.getElementById("alert").innerHTML = "";
-	
 	var city = document.getElementById("city").value;
 	
 	if (city != "") {
 		var dataRequest = new XMLHttpRequest();
 		// Setup to receive data from the URL
 		var myAddress =
-		"https://api.openweathermap.org/data/2.5/weather?q=" +
+		"http://api.openweathermap.org/data/2.5/weather?q=" +
 		city +
 		"&units=metric&appid=e10b98b0f39c7d3653ea2d4b88af4ddd";
 		dataRequest.open("GET", myAddress, true);
@@ -122,31 +121,55 @@ btn.addEventListener("click", function() {
 	dataRequest.send();
 	// btn.classList.add("hide-btn");
 
-	var forecastRequest = new XMLHttpRequest();
+	var dataRequest = new XMLHttpRequest();
 	// Setup to receive data from the URL
-	var myForecast ="https://api.openweathermap.org/data/2.5/forecast?q=" +
-	city + "&units=metric&appid=e10b98b0f39c7d3653ea2d4b88af4ddd";
-	forecastRequest.open("GET", myForecast, true);
-	forecastRequest.onload = function() {
+	var myForecast =
+	"http://api.openweathermap.org/data/2.5/forecast/daily?q=" +
+	city +
+	"&units=metric&cnt=5&appid=e10b98b0f39c7d3653ea2d4b88af4ddd";
+	dataRequest.open("GET", myForecast, true);
+	dataRequest.onload = function() {
+		// if (dataRequest.status >= 200 && dataRequest.status < 400)
 		if (this.readyState == 4 && this.status == 200) {
-			var forecastData = JSON.parse(forecastRequest.responseText);
-			console.log(forecastData);
-			writeForecast(forecastData);
+			// convert JSON object to javascript object
+			var forecastData = JSON.parse(dataRequest.responseText);
+			// check for browser support of storage if not
+			// alert the user that it is not avalable
+			if (typeof Storage !== "undefined") {
+				//convert javascript object to JSON object to be able
+				//to store as localStorage
+				localStorage.setItem("myData", JSON.stringify(forecastData));
+			} else {
+				alert("There is no storage available");
+			}
+			// retrieve local storage and convert JSON object to
+			// javascript object in preparation to display to the
+			// webpage
+			var newForecastData = JSON.parse(localStorage.getItem("myForcast"));
+			writeForecast(newForecastData);
 		} else {
 			document.getElementById("alert").innerHTML =
 			"City is not found - Please check spelling";
+			// weather.insertAdjacentHTML('beforeend', 'City is not found - Please check spelling');
+			// return;
 		}
 	};
 
-	
-	// sent our request for data
-	forecastRequest.send();
-
+		// sent our request for data
+		dataRequest.send();
+		// btn.classList.add("hide-btn");
 });
 
 function writeData(data) {
-
+	// document.getElementById("weather").innerHTML = "";
+	// var htmlString = "";
+	//    for (i = 0; i < data.length; i++) {
+	//        htmlString += "<p>" + data[i].lname + ", "
+	//                + data[i].fname + " - Business: "
+	//                + data[i].business + ".";
+	//    }
 	// Main Data
+
 	var cityName = data.name;
 	var countryName = data.sys.country;
 	var lat1 = data.coord.lat;
@@ -179,8 +202,13 @@ function writeData(data) {
 	document.getElementById("direction").innerHTML = wind_deg;
 	document.getElementById("apressure").innerHTML =
 	pressure + "hPa<br/>pressure";
+	document.getElementById("wicon").appendChild(el);
+	
+	// el.src = "./content/img/icons/" + icon + ".png";
 
-	// document.getElementById("wicon").src = "./content/img/icons/" + icon + ".png";	
+	document.getElementById("wicon").src = "./content/img/icons/" + icon + ".png";
+	
+	// el.src = "./content/img/icons/" + icon + ".png";
 	
 	var wicon =
 	'<img class="myweathericon" src="./content/img/icons/' + icon + '.png">';
@@ -218,21 +246,19 @@ function writeData(data) {
 		"url('./content/img/cloudy.png')";
 		break;
 	}
-	
 }
 
 function writeForecast(data) {
 	
 	var table = '';
 	
-	for(var i = 0; i < data.list.length; i+=8){
+	for(var i = 0; i < 41 ; i+8){
 		
 		table += "<tr>";
 
-		table += "<td> <img src= './content/img/icons/" + data.list[i].weather[0].icon + ".png'></td>"
+		table += "<td>" + data.list[i].weather[0].icon + "</td>"
+		table += "<td>" + data.list[i].weather[0].main + "</td>"
 		table += "<td>" + data.list[i].weather[0].description + "</td>"
-		table += "<td>" + data.list[i].main.temp_min + "&deg;C</td>"
-		table += "<td>" + data.list[i].main.temp_max + "&deg;C</td>"
 
 		table += "</tr>";
 
