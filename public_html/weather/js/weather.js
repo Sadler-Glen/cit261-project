@@ -37,10 +37,7 @@ function showData(lat, lon) {
 		if (this.readyState == 4 && this.status == 200) {
 			var weatherData = JSON.parse(dataRequest.responseText);
 			writeData(weatherData);
-		} else {
-			document.getElementById("alert").innerHTML =
-			"City is not found - Please check spelling";
-		}
+		} 
 	};
 	
 	// sent our request for data
@@ -55,24 +52,19 @@ function showData(lat, lon) {
 	forecastRequest.onload = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			var forecastData = JSON.parse(forecastRequest.responseText);
-			console.log(forecastData);
-			writeForecast(forecastData);
-		} else {
-			document.getElementById("alert").innerHTML =
-			"City is not found - Please check spelling";
-		}
-	};
 
+			writeForecast(forecastData);
+		} 
+	};
 	
 	// sent our request for data
 	forecastRequest.send();
 }
 
+
 var btn = document.getElementById("btn");
 btn.addEventListener("click", function() {
-	// AJAX Asynchronus, Javascript, And XML (We use JSON)
-	// create a new variable and set a new
-	// instance of XMLHttpRequest
+
 	document.getElementById("alert").innerHTML = "";
 	
 	var city = document.getElementById("city").value;
@@ -86,36 +78,24 @@ btn.addEventListener("click", function() {
 		"&units=metric&appid=e10b98b0f39c7d3653ea2d4b88af4ddd";
 		dataRequest.open("GET", myAddress, true);
 		dataRequest.onload = function() {
-			// if (dataRequest.status >= 200 && dataRequest.status < 400)
 			if (this.readyState == 4 && this.status == 200) {
-				// convert JSON object to javascript object
 				var weatherData = JSON.parse(dataRequest.responseText);
-				// check for browser support of storage if not
-				// alert the user that it is not avalable
 				if (typeof Storage !== "undefined") {
-					//convert javascript object to JSON object to be able
-					//to store as localStorage
-					localStorage.setItem("myData", JSON.stringify(weatherData));
+					localStorage.setItem("weather", JSON.stringify(weatherData));
 				} else {
 					alert("There is no storage available");
 				}
-				// retrieve local storage and convert JSON object to
-				// javascript object in preparation to display to the
-				// webpage
-				var newWeatherData = JSON.parse(localStorage.getItem("myData"));
+				var newWeatherData = JSON.parse(localStorage.getItem("weather"));
 				writeData(newWeatherData);
 			} else {
 				document.getElementById("alert").innerHTML =
-				"City is not found - Please check spelling";
+				"City is not found!";
 				// weather.insertAdjacentHTML('beforeend', 'City is not found - Please check spelling');
 				// return;
 			}
 		};
 	} else {
-		document.getElementById("alert").innerHTML = "City Cannot be empty";
-		
-		// weather.insertAdjacentHTML('beforeend', 'City cannot be empty - Please re-enter');
-		// return;
+		document.getElementById("alert").innerHTML = "City Cannot be empty!";
 	}
 	
 	// sent our request for data
@@ -130,11 +110,17 @@ btn.addEventListener("click", function() {
 	forecastRequest.onload = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			var forecastData = JSON.parse(forecastRequest.responseText);
-			console.log(forecastData);
-			writeForecast(forecastData);
+			if (typeof Storage !== "undefined") {
+				localStorage.setItem("forecast", JSON.stringify(forecastData));
+			} else {
+				alert("There is no storage available");
+			}
+			var newforecastData = JSON.parse(localStorage.getItem("forecast"));
+			writeForecast(newforecastData);
 		} else {
 			document.getElementById("alert").innerHTML =
-			"City is not found - Please check spelling";
+			"City is not found!";
+
 		}
 	};
 
@@ -224,11 +210,12 @@ function writeData(data) {
 function writeForecast(data) {
 	
 	var table = '';
-	
+
 	for(var i = 0; i < data.list.length; i+=8){
 		
 		table += "<tr>";
-
+		table += "<td>" + (data.list[i].dt_txt).substring(0, 10) + "</td>"
+		
 		table += "<td> <img src= './content/img/icons/" + data.list[i].weather[0].icon + ".png'></td>"
 		table += "<td>" + data.list[i].weather[0].description + "</td>"
 		table += "<td>" + data.list[i].main.temp_min + "&deg;C</td>"
@@ -274,8 +261,6 @@ function degreesToDirection(degrees) {
 function convertToTime(sunrise, sunset) {
 	var myDate1 = new Date(1000 * sunrise);
 	var myDate2 = new Date(1000 * sunset);
-	console.log(myDate1);
-	console.log(myDate2);
 	var sr_hrs = myDate1.getHours();
 	var sr_mins = myDate1.getMinutes();
 	var sr_secs = myDate1.getSeconds();
@@ -289,6 +274,7 @@ function convertToTime(sunrise, sunset) {
 	var ss_time = ss_hrs + ":" + ss_mins + ":" + ss_secs;
 	
 	document.getElementById("sset").innerHTML = ss_time + "<br/>sunset";
+
 }
 
 function toggleNav() {
@@ -328,15 +314,4 @@ function fadeIn(){
 	}
 }
 	
-	// el1.style.transition = "opacity 1.0s ease-out 0s";
-	// el1.style.opacity = 0;
-
-    // el1.style.transition = "opacity 1.0s ease-in 0s";
-	// el1.style.opacity = 1;
-
-	// el2.style.transition = "opacity 3.0s ease-out 0s";
-	// el2.style.opacity = 0;
-
-	// el2.style.transition = "opacity 3.0s ease-in 0s";
-	// el2.style.opacity = 1;
 }
