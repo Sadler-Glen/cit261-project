@@ -31,7 +31,7 @@ body{
     background: url("../content/img/bg.jpg");
     background-attachment: fixed;
 	background-position: center;
-	/* background-repeat: no-repeat; */
+	background-repeat: repeat;
     background-size: cover;
     width: 100%;
     height: 100%;
