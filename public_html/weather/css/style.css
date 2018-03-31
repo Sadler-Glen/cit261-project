@@ -722,7 +722,7 @@ table {
     animation: slide 4s forwards;
 }
 
-/* @keyframes slide{
+@keyframes slide{
     0%{
         opacity: 0;
         transform: translateX(-200px);
@@ -730,9 +730,9 @@ table {
     100%{
         opacity: .8;
         transform: translateX(0);
-        box-shadow: 0 0 10px rgb(74, 9, 250);
+        /* box-shadow: 0 0 10px rgb(74, 9, 250); */
     }
-   } */
+   }
 
 table, th, td {
 	padding: 2px 8px;
