@@ -16,6 +16,9 @@ function showPosition(position) {
 	var lat = Math.round(position.coords.latitude*10)/10;
 	var lon = Math.round(position.coords.longitude*10)/10;
 	x.innerHTML = "Lat: " + lat + " / Lon: " + lon;
+	var place = {lat: lat, lng: lon};
+	var map = new google.maps.Map(document.getElementById("map"), {zoom: 8, center: place});
+	var marker = new google.maps.Marker({position: place, map: map});
 	showData(lat, lon);
 }
 
@@ -153,6 +156,10 @@ function writeData(data) {
 	var x = document.getElementById("gpscoords");
 	x.innerHTML = "Lat: " + lat1 + " | Lon: " + lon1;
 	var el = document.createElement("img");
+
+	var place = {lat: lat1, lng: lon1};
+	var map = new google.maps.Map(document.getElementById("map"), {zoom: 8, center: place});
+	var marker = new google.maps.Marker({position: place, map: map});
 	
 	document.getElementById("temperature").innerHTML = temp + "&deg;";
 	document.getElementById("mycity").innerHTML = cityName;
@@ -312,6 +319,5 @@ function fadeIn(){
 		el2.style.transition = "opacity 3.0s ease-in 0s";
 		el2.style.opacity = 1;
 	}
-}
-	
+}	
 }

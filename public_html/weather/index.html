@@ -28,9 +28,12 @@
 <nav role="navigation" id="nav" class="menu">
     <ul>
         <li id="first">
-            <a href="#page-header">Home</a>
+            <a href="#current">Home</a>
         </li>
         <li id="second">
+            <a href="#place">Map</a>
+        </li>
+        <li id="third">
             <a href="#fiveDay">5 Day Forecast</a>
         </li>
         <li id="third">
@@ -39,11 +42,9 @@
     </ul>
 </nav>
 <main id="main" role="main">
-    
-    <center>
-        <div id="alert" class="alert"></div>
+    <center><h2 id="current">Current Weather</h2></center>
+    <center><div id="alert" class="alert"></div></center>
         <div id="gpscoords" class ="gpscoords" ></div>
-    </center>
     <center>
         <input id='city' type="text" name="find" placeholder="City...">
         <button id="btn" class="button">Display</button>
@@ -89,13 +90,20 @@
             <div id="weather" class="weather"></div>
         </center>
         <p></p>
-        <hr>
+        <center>
+            <h2 id="place">Location</h2>
+            <br />
+            <div id="map"></div>
+            <br />
+            <hr>
+        </center>
         <div id="fiveDay" class="fiveDay">
             <center>
                 <h2>5 Day Forecast</h2><br />
             </center>
         </div>
     </div>
+
     <div>
         <table id= "mytable" class="mytable">
             <thead>
@@ -156,7 +164,10 @@
         }
     </script>
     <!-- Script for the googlemap API -->
+    
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcoYPIAqPMwB-5HjYM1817_opsitjKNZc&libraries=places&callback=activatePlacesSearch"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcoYPIAqPMwB-5HjYM1817_opsitjKNZc&callback=initMap"></script> -->
+
 </body>
 
 </html>
